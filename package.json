@@ -11,6 +11,7 @@
     "update-browserslist-db": "npx browserslist@latest --update-db"
   },
   "dependencies": {
+    "@next/env": "^14.2.4",
     "dotenv": "^8.2.0",
     "encoding": "^0.1.13",
     "framer-motion": "^2.7.5",
