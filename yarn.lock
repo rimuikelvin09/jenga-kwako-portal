@@ -5444,7 +5444,7 @@ next-optimized-images@^2.5.4:
     raw-loader "^2.0.0"
     url-loader "^1.1.2"
 
-next-sitemap@^1.2.4:
+next-sitemap@^1.9.12:
   version "1.9.12"
   resolved "https://registry.npmjs.org/next-sitemap/-/next-sitemap-1.9.12.tgz"
   integrity sha512-kHXf4ZNAGLJyK16HbjzE5X9JlKwXtxW+9J4dh3oT7LSbU/+3bN+VqWjNw/776Otbanf7EJsvl51oQ78qQW5XBQ==
