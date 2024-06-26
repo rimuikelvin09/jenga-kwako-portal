@@ -10,27 +10,27 @@ import ArrowEven from 'assets/arrowEven.svg';
 const data = [
   {
     id: 1,
-    title: 'Set disbursement Instructions',
+    title: 'Application & Appraisal',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Fill out the form on this page, and we\'ll gather details to assess how much you qualify for. A bank representative will contact you to request necessary documents.',
   },
   {
     id: 2,
-    title: 'Assembly retrieves funds from your account',
+    title: 'Drawings, BQ, Approvals & Permits',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Once the bank determines your eligibility, share your budget with us. We\'ll create architectural and structural drawings, then estimate the construction costs. We\’ll also handle the required government approvals and permits.',
   },
   {
     id: 3,
-    title: 'Assembly initiates disbursement',
+    title: 'Bank Disburses the Funds ',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'After meeting the bank\'s requirements, the funds will be released to your account for construction purposes. The bank will disburse the money in tranches, monitoring the progress and quality of the construction.',
   },
   {
     id: 4,
-    title: 'Customer receives funds payment',
+    title: 'Complete Construction: Foundation to Finishing',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Benchmark Building Solutions will handle the entire construction process from foundation to finishing, following the agreed-upon drawings, BQ, and terms and conditions, all under bank supervision.',
   },
 ];
 
@@ -39,8 +39,8 @@ export default function WorkFlow() {
     <section sx={styles.workflow}>
       <Container>
         <SectionHeader
-          slogan="Whats the function"
-          title="Let’s see how it works"
+          slogan="Let's break it down "
+          title="This is the step by step process"
           isWhite={true}
         />
 
@@ -69,6 +69,7 @@ const styles = {
     backgroundSize: 'cover',
     position: 'relative',
     py: [8, null, 9, null, null, 10],
+    mb: 4,
   },
   grid: {
     mb: -1,

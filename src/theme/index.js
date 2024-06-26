@@ -9,10 +9,12 @@ export default {
     background_secondary: '#F9FBFD', // secondary background color
     border_color: '#E5ECF4', // border color
     yellow: '#FFA740', // border color
-    primary: '#EA3A60', // primary button and link color
-    secondary: '#2563FF', // secondary color - can be used for hover states
+    primary: '#eb2026', // primary button and link color
+    secondary: '#143056', // secondary color - can be used for hover states
     muted: '#E4E4E4', // muted color
     accent: '#609', // a contrast color for emphasizing UI
+    blue: '#143056',
+    red: '#eb2026',
 
     // highlight	a background color for highlighting text
     modes: {
@@ -35,8 +37,10 @@ export default {
     '1620px',
   ],
   fonts: {
-    body: "'DM Sans', sans-serif",
-    heading: "'DM Sans', sans-serif",
+    //body: "'DM Sans', sans-serif",
+    body: "'Be Vietnam Pro', sans-serif",
+    heading: "'Be Vietnam Pro', sans-serif",
+    //heading: "'DM Sans', sans-serif",
   },
   fontSizes: [12, 15, 16, 18, 20, 22, 24, 28, 32, 36, 42, 48, 52, 64],
   fontWeights: {
@@ -182,7 +186,7 @@ export default {
     },
     lead: {
       fontSize: 40,
-      fontFamily: 'DM Sans',
+      fontFamily: 'Be Vietnam Pro',
       fontWeight: '500',
       lineHeight: '60px',
       letterSpacing: '-1.5px',

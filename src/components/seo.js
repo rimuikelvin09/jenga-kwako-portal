@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 export default function SEO({
   description = 'Jenga Kwako portal',
-  author = 'RedQ, Inc',
+  author = 'AlphaTech Insights',
   meta,
   title = 'Jenga Kwako | Benchmark Building Solutions ltd',
 }) {

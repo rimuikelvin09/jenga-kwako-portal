@@ -23,11 +23,11 @@ export default function IndexPage() {
         <Layout>
           <SEO title="Jenga Kwako | Benchmark Building Solutions ltd" />
           <Banner />
-          <KeyFeature />
+          {/*<KeyFeature />*/}
           <ServiceSection />
-          <Feature />
-          <CoreFeature />
           <WorkFlow />
+          {/*<Feature />*/}
+          <CoreFeature />
           <Package />
           <TeamSection />
           <TestimonialCard />

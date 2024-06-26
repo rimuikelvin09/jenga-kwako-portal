@@ -18,28 +18,28 @@ import { IoIosPlay } from 'react-icons/io';
 import ServiceThumb from 'assets/Alice KMRC.png';
 import shapePattern from 'assets/shape-pattern1.png';
 
-import Smart from 'assets/services/smart.svg';
-import Secure from 'assets/services/secure.svg';
+import Quality from 'assets/services/smart.svg';
+import Affordable from 'assets/services/secure.svg';
 
 const data = {
-  subTitle: 'our services',
-  title: 'Business Goals Achieved with Design',
+  subTitle: 'How does it work ?',
+  title: 'Jenga Kwako, Road to Home-Ownership',
   features: [
     {
       id: 1,
-      imgSrc: Smart,
-      altText: 'Smart Features',
-      title: 'Smart Features',
+      imgSrc: Quality,
+      altText: 'Quality Construction',
+      title: 'Quality Construction Services',
       text:
-        'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
+        'We have created your One-Stop Shop for All Construction Needs: Architectural Services, QS Services, and Full Construction from Foundation to Finishing! We also help you get the necessary Government approvals & permits for construction',
     },
     {
       id: 2,
-      imgSrc: Secure,
-      altText: 'Secure Contents',
-      title: 'Secure Contents',
+      imgSrc: Affordable,
+      altText: 'Affordable Home Loans',
+      title: 'Affordable Home Loans',
       text:
-        'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
+        'The KMRC-backed mortgage offers the most affordable home loans at a fixed interest rate of 9.5% p.a on a reducing balance, with repayment period of up to 25 years. You can get upto 10.5 Million to build your own home',
     },
   ],
 };
@@ -90,7 +90,7 @@ export default function ServiceSection() {
       <ModalVideo
         channel="youtube"
         isOpen={videoOpen}
-        videoId="ZNA9rmDsYVE"
+        videoId="y4e0M8z0n9M"
         onClose={() => setVideoOpen(false)}
       />
     </section>
