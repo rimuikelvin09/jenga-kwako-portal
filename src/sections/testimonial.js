@@ -4,6 +4,9 @@ import SectionHeader from 'components/section-header';
 import Rating from 'components/rating';
 import ButtonGroup from 'components/button-group';
 import Carousel from 'react-multi-carousel';
+import ModalVideo from 'react-modal-video';
+import { IoIosPlay } from 'react-icons/io';
+import { useState } from 'react';
 
 import Avatar1 from 'assets/testimonial/avatar1.png';
 import Avatar2 from 'assets/testimonial/avatar2.png';
@@ -13,43 +16,36 @@ import Avatar4 from 'assets/testimonial/avatar4.png';
 const data = [
   {
     id: 1,
-    title: 'Modern look & trending design',
-    description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
-    avatar: Avatar1,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
-    review: 4,
+    title: 'It is not easy if you don\'t have the cash',
+    /*avatar: Avatar1,
+    designation: '@denny.hil',*/
+    name: 'Phylis Wanjiru',
+    videoUrl: 'https://youtu.be/szBXNnu1vPI?si=lHD-yp3dNm-FToDF',
+    videoId: 'szBXNnu1vPI',
+    videoType: 'youtube',
+    thumbnail: `https://img.youtube.com/vi/szBXNnu1vPI/hqdefault.jpg`,
   },
   {
     id: 2,
-    title: 'Design Quality & performance',
-    description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
-    avatar: Avatar2,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
-    review: 5,
+    title: 'I liked the quality of work',
+    videoUrl: 'https://www.youtube.com/watch?v=0THiQ6iq3C0&t=4s',
+    /*avatar: Avatar3,
+    designation: '@denny.hil',*/
+    name: 'Evans Kiprotich',
+    videoId: '0THiQ6iq3C0',
+    videoType: 'youtube',
+    thumbnail: `https://img.youtube.com/vi/0THiQ6iq3C0/hqdefault.jpg`,
   },
   {
     id: 3,
-    title: 'Layout and organized layers',
-    description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
-    avatar: Avatar3,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
-    review: 5,
-  },
-  {
-    id: 4,
-    title: 'Modern look & trending design',
-    description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
-    avatar: Avatar4,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
-    review: 4,
+    title: 'We decided not to continue paying rent',
+    videoUrl: 'https://youtu.be/s0j0MNgvX4U',
+    /*avatar: Avatar2,
+    designation: '@denny.hil', */
+    name: 'Rosemary',
+    videoId: 's0j0MNgvX4U',
+    videoType: 'youtube',
+    thumbnail: `https://img.youtube.com/vi/s0j0MNgvX4U/hqdefault.jpg`,
   },
 ];
 
@@ -77,6 +73,16 @@ const responsive = {
 };
 
 export default function TestimonialCard() {
+  const [videoOpen, setVideoOpen] = useState(false);
+  const [videoId, setVideoId] = useState('');
+  const [videoType, setVideoType] = useState('');
+
+  const handleVideoOpen = (videoId, videoType) => {
+    setVideoId(videoId);
+    setVideoType(videoType);
+    setVideoOpen(true);
+  };
+
   return (
     <section id="testimonial" sx={{ variant: 'section.testimonial' }}>
       <Container css={{ textAlign: 'center' }}>
@@ -107,15 +113,15 @@ export default function TestimonialCard() {
         >
           {data.map((item) => (
             <Box sx={styles.reviewCard} key={`testimonial--key${item.id}`}>
-              <Rating rating={item.review} />
+              {/*<Rating rating={item.review} /> */}
               <Heading as="h3" sx={styles.title}>
                 {item.title}
               </Heading>
-              <Text sx={styles.description}>{item.description}</Text>
+              <Image src={item.thumbnail} sx={styles.thumbnail} onClick={() => handleVideoOpen(item.videoId, item.videoType)} />
               <div className="card-footer">
-                <div className="image">
+                {/*<div className="image">
                   <Image src={item.avatar} alt="Client Image" />
-                </div>
+                </div>*/}
                 <div className="reviewer-info">
                   <Heading as="h4" sx={styles.heading}>
                     {item.name}
@@ -127,6 +133,22 @@ export default function TestimonialCard() {
           ))}
         </Carousel>
       </Box>
+      {videoType === 'youtube' && (
+        <ModalVideo
+          channel="youtube"
+          isOpen={videoOpen}
+          videoId={videoId}
+          onClose={() => setVideoOpen(false)}
+        />
+      )}
+      {videoType === 'facebook' && (
+        <ModalVideo
+          channel="facebook"
+          isOpen={videoOpen}
+          videoId={videoId}
+          onClose={() => setVideoOpen(false)}
+        />
+      )}
     </section>
   );
 }
@@ -253,5 +275,21 @@ const styles = {
     fontWeight: '500',
     fontSize: 1,
     lineHeight: 1.4,
+  },
+  playButton: {
+    width: '60px',
+    height: '60px',
+    borderRadius: '50%',
+    backgroundColor: 'primary',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '0 auto',
+    cursor: 'pointer',
+    mt: 3,
+    transition: 'background-color 0.3s',
+    '&:hover': {
+      backgroundColor: 'dark',
+    },
   },
 };

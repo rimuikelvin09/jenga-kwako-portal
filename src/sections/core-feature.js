@@ -7,12 +7,12 @@ import FeatureThumb from 'assets/core-feature.jpg';
 import shapePattern from 'assets/shape-pattern2.png';
 
 const data = {
-  subTitle: 'Core features',
-  title: 'Smart Jackpots that you may love this anytime & anywhere',
+  subTitle: 'Lead Contractor | Technical Director',
+  title: 'Joseph Gachinga',
   description:
-    'Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever.',
-  btnName: 'Get Started',
-  btnURL: '#',
+    'My gratification as a construction professional of more than 30 years is the joy my clients experience when I hand over the project. We are dedicated to providing services that are nothing short of excellent',
+  btnName: 'Featured Projects',
+  btnURL: 'https://bbsltd.co.ke/gallery/',
 };
 
 export default function CoreFeature() {

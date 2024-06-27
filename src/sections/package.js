@@ -12,45 +12,45 @@ const packages = {
   monthly: [
     {
       id: 1,
-      name: 'Free Plan',
-      description: 'For Small teams or office',
-      buttonText: 'Start free trail',
-      priceWithUnit: '$0',
-      points: [
-        {
-          id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder',
-          isAvailable: true,
-        },
-        {
-          id: 2,
-          icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
-          isAvailable: true,
-        },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCloseCircle />,
-          text: 'eCommerce Store ',
-          isAvailable: true,
-        },
-      ],
+      name: 'T & c\'s of Jenga Kwako',
+      description: 'Downlaod the terms and Conditions here',
+      buttonText: 'Download',
+      //priceWithUnit: '$0',
+      /* points: [
+         {
+           id: 1,
+           icon: <IoIosCheckmarkCircle />,
+           text: 'Drag & Drop Builder',
+           isAvailable: true,
+         },
+         {
+           id: 2,
+           icon: <IoIosCheckmarkCircle />,
+           text: "1,000's of Templates",
+           isAvailable: true,
+         },
+         {
+           id: 3,
+           icon: <IoIosCheckmarkCircle />,
+           text: 'Blog Support Tools',
+           isAvailable: true,
+         },
+         {
+           id: 4,
+           icon: <IoIosCloseCircle />,
+           text: 'eCommerce Store ',
+           isAvailable: true,
+         },
+       ],*/
     },
     {
       id: 2,
-      name: 'Business king',
-      description: 'For Enterprise business',
-      priceWithUnit: '$15',
-      buttonText: 'Create account',
-      anotherOption: 'Or Start 14 Days trail',
-      points: [
+      name: 'Ammortization Table',
+      description: 'Get an idea of how much you can be paying per month for your own home',
+      //priceWithUnit: '$15',
+      buttonText: 'Download',
+      //anotherOption: 'Or Start 14 Days trail',
+      /*points: [
         {
           id: 1,
           icon: <IoIosCheckmarkCircle />,
@@ -75,18 +75,18 @@ const packages = {
           text: 'eCommerce Store ',
           isAvailable: true,
         },
-      ],
+      ],*/
     },
     {
       id: 3,
-      header: 'Suggested',
-      headerIcon: <IoIosCheckmarkCircle />,
-      name: 'Pro Master',
-      description: 'For pro level developers',
-      priceWithUnit: '$24',
-      buttonText: 'Create account',
-      anotherOption: 'Or Start 14 Days trail',
-      points: [
+      /*header: 'Suggested',
+      headerIcon: <IoIosCheckmarkCircle />,*/
+      name: 'Requirements Checklist',
+      description: 'Get the list of requirements by the PML\'s for you to get the loan',
+      //priceWithUnit: '$24',
+      buttonText: 'Download',
+      //anotherOption: 'Or Start 14 Days trail',
+      /*points: [
         {
           id: 1,
           icon: <IoIosCheckmarkCircle />,
@@ -111,109 +111,87 @@ const packages = {
           text: 'eCommerce Store ',
           isAvailable: true,
         },
-      ],
+      ],*/
     },
   ],
   annual: [
     {
       id: 1,
-      name: 'Free Plan',
-      description: 'For Small teams or office',
-      buttonText: 'Start free trail',
-      priceWithUnit: '$0',
+      name: '2 bedrooms',
+      description: 'Get an idea of a two bedroom you can get with your budget',
+      buttonText: 'View all',
+      //priceWithUnit: '$0',
       points: [
         {
           id: 1,
           icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
+          text: "2 Bedroom bungalow with a pitched roof",
           isAvailable: true,
         },
         {
           id: 2,
           icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder',
+          text: '2 Bedroom bungalow with a flat roof',
           isAvailable: true,
         },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCloseCircle />,
-          text: 'eCommerce Store ',
-          isAvailable: true,
-        },
+
       ],
     },
     {
       id: 2,
-      name: 'Business king',
-      description: 'For Enterprise business',
-      priceWithUnit: '$25',
-      buttonText: 'Create account',
-      anotherOption: 'Or Start 10 Days trail',
+      name: '3 Bedrooms',
+      description: 'Get an idea of a three bedroom you can get with your budget',
+      buttonText: 'View all',
+      /*priceWithUnit: '$25',
+      anotherOption: 'Or Start 10 Days trail',*/
       points: [
         {
           id: 1,
           icon: <IoIosCheckmarkCircle />,
-          text: 'eCommerce Store',
+          text: '3 Bedroom bungalow with a pitched roof',
           isAvailable: true,
         },
         {
           id: 2,
           icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
+          text: '3 Bedroom bungalow with a flat roof',
           isAvailable: true,
         },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder ',
-          isAvailable: true,
-        },
+
       ],
     },
     {
       id: 3,
       header: 'Suggested',
       headerIcon: <IoIosCheckmarkCircle />,
-      name: 'Pro Master',
-      description: 'For pro level developers',
-      priceWithUnit: '$39',
-      buttonText: 'Create account',
-      anotherOption: 'Or Start 10 Days trail',
+      name: '4 Bedrooms',
+      description: 'Get an idea of a four bedroom you can get with your budget',
+      buttonText: 'View all',
+      /*priceWithUnit: '$39',
+      anotherOption: 'Or Start 10 Days trail',*/
       points: [
         {
           id: 1,
           icon: <IoIosCheckmarkCircle />,
-          text: 'eCommerce Store',
+          text: '4 Bedroom maisonette with a Pitched roof',
           isAvailable: true,
         },
         {
           id: 2,
           icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
+          text: '4 Bedroom maisonette with a Flat roof',
           isAvailable: true,
         },
         {
           id: 3,
           icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
+          text: "4 Bedroom bungalow with a Pitched roof",
           isAvailable: true,
         },
         {
           id: 4,
           icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder ',
+          text: '4 Bedroom bungalow with a flat roof ',
           isAvailable: true,
         },
       ],
@@ -289,8 +267,8 @@ export default function Package() {
     <section id="pricing" sx={{ variant: 'section.pricing' }}>
       <Container>
         <SectionHeader
-          slogan="Pricing Plan"
-          title="Choose your pricing policy"
+          slogan="Resources"
+          title="Here are some materials"
         />
         <Flex sx={styles.buttonGroup}>
           <Box sx={styles.buttonGroupInner}>
@@ -300,7 +278,7 @@ export default function Package() {
               aria-label="Monthly"
               onClick={() => handlePricingPlan('monthly')}
             >
-              Monthly Plan
+              Downloadables
             </button>
             <button
               className={state.active === 'annual' ? 'active' : ''}
@@ -308,7 +286,7 @@ export default function Package() {
               aria-label="Annual"
               onClick={() => handlePricingPlan('annual')}
             >
-              Annual Plan
+              Sample plans
             </button>
           </Box>
         </Flex>
