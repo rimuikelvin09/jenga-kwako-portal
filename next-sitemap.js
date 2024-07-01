@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://startup-agency-modern.vercel.app',
+  siteUrl: 'https://www.jengakwako.bbsltd.co.ke/',
   generateRobotsTxt: true,
   // optional
   // robotsTxtOptions: {

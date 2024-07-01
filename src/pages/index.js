@@ -32,7 +32,7 @@ export default function IndexPage() {
           {/*<TeamSection />*/}
           <TestimonialCard />
           <BlogSection />
-          <Subscribe />
+          {/**<Subscribe /> */}
         </Layout>
       </StickyProvider>
     </ThemeProvider>

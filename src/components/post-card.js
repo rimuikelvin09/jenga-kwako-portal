@@ -6,8 +6,9 @@ export default function PostCard({
   alt,
   postLink,
   title,
-  authorName,
-  date,
+  //authorName,
+  //date,
+  description,
 }) {
   return (
     <Box sx={styles.card}>
@@ -23,8 +24,9 @@ export default function PostCard({
         </Heading>
 
         <Flex sx={styles.postFooter}>
-          <Text sx={styles.postFooter.name}>{authorName}</Text>
-          <Text sx={styles.postFooter.date}>{date}</Text>
+          <Text sx={styles.postFooter.description}>{description}</Text>
+          {/** <Text sx={styles.postFooter.name}>{authorName}</Text>
+          <Text sx={styles.postFooter.date}>{date}</Text>*/}
         </Flex>
       </Flex>
     </Box>
@@ -36,6 +38,7 @@ const styles = {
     backgroundColor: 'white',
     boxShadow: '0px 4px 10px rgba(38,78,118,0.12)',
     borderRadius: '7px',
+    height: '550px',
     m: '0 15px 40px',
     transition: 'all 0.3s',
     '&:hover': {
@@ -79,5 +82,13 @@ const styles = {
       fontWeight: 400,
       lineHeight: 1.5,
     },
+    description: {
+      fontSize: [2, null, null, null, null, 3],
+      color: 'heading',
+      lineHeight: [1.4, 1.5],
+      fontWeight: 400,
+      mb: [3, 4, 5],
+      pr: [0, null, null, null, 5],
+    }
   },
 };

@@ -36,7 +36,7 @@ const data = [
 
 export default function WorkFlow() {
   return (
-    <section sx={styles.workflow}>
+    <section id='workflow' sx={styles.workflow}>
       <Container>
         <SectionHeader
           slogan="Let's break it down "

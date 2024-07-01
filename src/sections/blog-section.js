@@ -8,43 +8,59 @@ import Carousel from 'react-multi-carousel';
 import PostThumb1 from 'assets/blog/1.jpg';
 import PostThumb2 from 'assets/blog/2.jpg';
 import PostThumb3 from 'assets/blog/3.jpg';
+import PostThumb4 from 'assets/blog/4.jpeg';
+import PostThumb5 from 'assets/blog/6.jpg';
 
 const data = [
   {
     id: 1,
     imgSrc: PostThumb1,
-    altText: 'Marketing',
-    postLink: '#',
-    title: 'Product Marketing: Monopoly Market',
-    authorName: 'Cali Cartel',
-    date: 'Oct 20, 2020',
+    altText: 'Jenga Stress-Free',
+    postLink: 'https://bbsltd.co.ke/jenga-stress-free/',
+    title: 'Jenga Stress-Free',
+    description: 'From project inception to seamless handover, we’re your one-stop A-Z solution for both commercial and residential construction….',
+    //authorName: 'Cali Cartel',
+    //date: 'Oct 20, 2020',
   },
   {
     id: 2,
     imgSrc: PostThumb2,
-    altText: 'Creative',
-    postLink: '#',
-    title: 'Product Marketing: Creative Market',
-    authorName: 'James Carter',
-    date: 'Oct 20, 2020',
+    altText: 'Labour-Only Contracting',
+    postLink: 'https://bbsltd.co.ke/labour-only/',
+    title: 'Labour-Only Contracting',
+    description: 'Discover our vast, vetted, and expertly trained labor force, ready to tackle any construction project – be it commercial or residential….',
+    //authorName: 'James Carter',
+    // date: 'Oct 20, 2020',
   },
   {
     id: 3,
     imgSrc: PostThumb3,
-    altText: 'Startup',
-    postLink: '#',
-    title: 'Product Marketing: Startup Product Sales',
-    authorName: 'Aston Aagar',
-    date: 'Oct 20, 2020',
+    altText: 'Diaspora Building Solutions',
+    postLink: 'https://bbsltd.co.ke/diaspora-building-solutions/',
+    title: 'Diaspora Building Solutions',
+    description: 'We’ve taken the initiative to support clients looking to invest back home, whether it’s in commercial buildings or their dream homes…. ',
+    //authorName: 'Aston Aagar',
+    //date: 'Oct 20, 2020',
   },
   {
     id: 4,
-    imgSrc: PostThumb2,
-    altText: 'Creative',
-    postLink: '#',
-    title: 'Product Marketing: Creative Market',
-    authorName: 'James Carter',
-    date: 'Oct 20, 2020',
+    imgSrc: PostThumb4,
+    altText: 'Repairs, Remodelling & Renovations ',
+    postLink: 'https://bbsltd.co.ke/repairs-remodeling-renovation/',
+    title: 'Repairs, Remodelling & Renovations ',
+    description: 'Elevate your space with confidence! Whether it’s a home or office transformation or essential repairs….',
+    // authorName: 'James Carter',
+    //date: 'Oct 20, 2020',
+  },
+  {
+    id: 5,
+    imgSrc: PostThumb5,
+    altText: 'Building Consultancy',
+    postLink: 'https://bbsltd.co.ke/repairs-remodeling-renovation/',
+    title: 'Building Consultancy ',
+    description: 'With our expertise, we not only provide top-tier consultancy but also excel in executing specialized construction modules…. ',
+    // authorName: 'James Carter',
+    //date: 'Oct 20, 2020',
   },
 ];
 
@@ -76,8 +92,8 @@ export default function BlogSection() {
     <section sx={{ variant: 'section.news' }}>
       <Container>
         <SectionHeader
-          slogan="our blog"
-          title="Explore our products for your business solution"
+          slogan="Other Products"
+          title="Explore our product offerings apart from the financing option"
         />
 
         <Box sx={styles.carouselWrapper}>
@@ -110,8 +126,9 @@ export default function BlogSection() {
                 alt={item.altText}
                 postLink={item.postLink}
                 title={item.title}
-                authorName={item.authorName}
-                date={item.date}
+                description={item.description}
+              //authorName={item.authorName}
+              //date={item.date}
               />
             ))}
           </Carousel>

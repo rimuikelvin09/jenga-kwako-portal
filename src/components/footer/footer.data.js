@@ -3,7 +3,7 @@ import Community from 'assets/widget/community.svg';
 import Github from 'assets/widget/github.svg';
 
 export default {
-  widgets: [
+  /*widgets: [
     {
       id: 1,
       iconSrc: Chat,
@@ -28,7 +28,7 @@ export default {
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor.',
     },
-  ],
+  ],*/
   menuItem: [
     {
       path: '/',
@@ -36,18 +36,18 @@ export default {
     },
     {
       path: '/',
-      label: 'Adversite',
+      label: 'About',
     },
     {
       path: '/',
-      label: 'Supports',
+      label: 'How it works',
     },
     {
       path: '/',
-      label: 'Marketing',
+      label: 'Testimonials',
     },
     {
-      path: '/',
+      path: 'https://bbsltd.co.ke/contact-us/',
       label: 'Contact',
     },
   ],

@@ -3,11 +3,16 @@ import { jsx, Box, Grid, Container, Image, Heading, Text } from 'theme-ui';
 import { Link } from 'components/link';
 import data from './footer.data';
 import FooterLogo from 'assets/Jengalogo.png';
+import FooterLogo2 from 'assets/Kmrclogo.png';
+import FooterLogo3 from 'assets/Benchmarklogo.png'
+import FooterLogo4 from 'assets/alphalogo.png'
+import FooterLogo5 from 'assets/cmaxlogo.png'
+import Logo from 'components/logo';
 export default function Footer() {
   return (
     <footer sx={styles.footer}>
       <Container>
-        <Grid sx={styles.widgets}>
+        {/* <Grid sx={styles.widgets}>
           {data.widgets.map((item) => (
             <Box
               key={`footer-widget--key${item.id}`}
@@ -21,11 +26,25 @@ export default function Footer() {
             </Box>
           ))}
         </Grid>
-        {/* End of footer widgets area */}
+         End of footer widgets area */}
         <Box sx={styles.footer.footerBottomArea}>
-          <Link path="/">
-            <Image src={FooterLogo} style={{ width: '50px', height: 'auto' }} alt="Logo" />
-          </Link>
+          <Grid sx={styles.footer.logos}>
+            <Link path="/">
+              <Image src={FooterLogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+            </Link>
+            <Link path="/">
+              <Image src={FooterLogo2} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+            </Link>
+            <Link path="/">
+              <Image src={FooterLogo3} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+            </Link>
+            <Link path="/">
+              <Image src={FooterLogo4} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+            </Link>
+            <Link path="/">
+              <Image src={FooterLogo5} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+            </Link>
+          </Grid>
           <Box sx={styles.footer.menus}>
             <nav>
               {data.menuItem.map(({ path, label }, i) => (
@@ -58,6 +77,13 @@ const styles = {
       textAlign: 'center',
       flexDirection: 'column',
     },
+    logos: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: '30px',
+      mb: '20px'
+    },
     menus: {
       mt: [3, 4],
       mb: 2,
@@ -89,7 +115,7 @@ const styles = {
       width: '100%',
     },
   },
-  widgets: {
+  /*widgets: {
     py: [8, null, 9],
     px: [4, 0, 3, null, 7, 10],
     width: ['100%', '80%', '100%'],
@@ -121,5 +147,5 @@ const styles = {
         lineHeight: 2,
       },
     },
-  },
+  },*/
 };
