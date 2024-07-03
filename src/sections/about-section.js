@@ -15,7 +15,7 @@ import TextFeature from 'components/text-feature';
 import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
 
-import ServiceThumb from 'assets/Alice KMRC.png';
+import DescriptionThumb from 'assets/Alice KMRC.png';
 import shapePattern from 'assets/shape-pattern1.png';
 
 import Quality from 'assets/services/smart.svg';
@@ -44,7 +44,7 @@ const data = {
   ],
 };
 
-export default function ServiceSection() {
+export default function aboutSection() {
   // modal popup video handler
   const [videoOpen, setVideoOpen] = useState(false);
   const handleClick = (e) => {
@@ -52,10 +52,10 @@ export default function ServiceSection() {
     setVideoOpen(true);
   };
   return (
-    <section id='services' sx={{ variant: 'section.services' }}>
+    <section id='about' sx={{ variant: 'section.about' }}>
       <Container sx={styles.containerBox}>
         <Box sx={styles.thumbnail}>
-          <Image src={ServiceThumb} alt="Thumbnail" />
+          <Image src={DescriptionThumb} alt="Thumbnail" />
           <Button
             sx={styles.videoBtn}
             onClick={handleClick}

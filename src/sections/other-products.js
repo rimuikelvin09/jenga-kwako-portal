@@ -19,8 +19,6 @@ const data = [
     postLink: 'https://bbsltd.co.ke/jenga-stress-free/',
     title: 'Jenga Stress-Free',
     description: 'From project inception to seamless handover, we’re your one-stop A-Z solution for both commercial and residential construction….',
-    //authorName: 'Cali Cartel',
-    //date: 'Oct 20, 2020',
   },
   {
     id: 2,
@@ -29,8 +27,7 @@ const data = [
     postLink: 'https://bbsltd.co.ke/labour-only/',
     title: 'Labour-Only Contracting',
     description: 'Discover our vast, vetted, and expertly trained labor force, ready to tackle any construction project – be it commercial or residential….',
-    //authorName: 'James Carter',
-    // date: 'Oct 20, 2020',
+
   },
   {
     id: 3,
@@ -39,8 +36,7 @@ const data = [
     postLink: 'https://bbsltd.co.ke/diaspora-building-solutions/',
     title: 'Diaspora Building Solutions',
     description: 'We’ve taken the initiative to support clients looking to invest back home, whether it’s in commercial buildings or their dream homes…. ',
-    //authorName: 'Aston Aagar',
-    //date: 'Oct 20, 2020',
+
   },
   {
     id: 4,
@@ -49,8 +45,7 @@ const data = [
     postLink: 'https://bbsltd.co.ke/repairs-remodeling-renovation/',
     title: 'Repairs, Remodelling & Renovations ',
     description: 'Elevate your space with confidence! Whether it’s a home or office transformation or essential repairs….',
-    // authorName: 'James Carter',
-    //date: 'Oct 20, 2020',
+
   },
   {
     id: 5,
@@ -59,8 +54,7 @@ const data = [
     postLink: 'https://bbsltd.co.ke/repairs-remodeling-renovation/',
     title: 'Building Consultancy ',
     description: 'With our expertise, we not only provide top-tier consultancy but also excel in executing specialized construction modules…. ',
-    // authorName: 'James Carter',
-    //date: 'Oct 20, 2020',
+
   },
 ];
 
@@ -89,7 +83,7 @@ const responsive = {
 
 export default function BlogSection() {
   return (
-    <section sx={{ variant: 'section.news' }}>
+    <section id='other-products' sx={{ variant: 'section.otherProducts' }}>
       <Container>
         <SectionHeader
           slogan="Other Products"
@@ -127,8 +121,6 @@ export default function BlogSection() {
                 postLink={item.postLink}
                 title={item.title}
                 description={item.description}
-              //authorName={item.authorName}
-              //date={item.date}
               />
             ))}
           </Carousel>

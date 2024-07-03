@@ -15,103 +15,21 @@ const packages = {
       name: 'T & c\'s of Jenga Kwako',
       description: 'Downlaod the terms and Conditions here',
       buttonText: 'Download',
-      //priceWithUnit: '$0',
-      /* points: [
-         {
-           id: 1,
-           icon: <IoIosCheckmarkCircle />,
-           text: 'Drag & Drop Builder',
-           isAvailable: true,
-         },
-         {
-           id: 2,
-           icon: <IoIosCheckmarkCircle />,
-           text: "1,000's of Templates",
-           isAvailable: true,
-         },
-         {
-           id: 3,
-           icon: <IoIosCheckmarkCircle />,
-           text: 'Blog Support Tools',
-           isAvailable: true,
-         },
-         {
-           id: 4,
-           icon: <IoIosCloseCircle />,
-           text: 'eCommerce Store ',
-           isAvailable: true,
-         },
-       ],*/
+      btnURL: 'https://bbsltd.co.ke/wp-content/uploads/2023/11/Requirements-checklist-2.pdf',
     },
     {
       id: 2,
       name: 'Ammortization Table',
       description: 'Get an idea of how much you can be paying per month for your own home',
-      //priceWithUnit: '$15',
       buttonText: 'Download',
-      //anotherOption: 'Or Start 14 Days trail',
-      /*points: [
-        {
-          id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder',
-          isAvailable: true,
-        },
-        {
-          id: 2,
-          icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
-          isAvailable: true,
-        },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'eCommerce Store ',
-          isAvailable: true,
-        },
-      ],*/
+
     },
     {
       id: 3,
-      /*header: 'Suggested',
-      headerIcon: <IoIosCheckmarkCircle />,*/
       name: 'Requirements Checklist',
       description: 'Get the list of requirements by the PML\'s for you to get the loan',
-      //priceWithUnit: '$24',
       buttonText: 'Download',
-      //anotherOption: 'Or Start 14 Days trail',
-      /*points: [
-        {
-          id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder',
-          isAvailable: true,
-        },
-        {
-          id: 2,
-          icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
-          isAvailable: true,
-        },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'eCommerce Store ',
-          isAvailable: true,
-        },
-      ],*/
+
     },
   ],
   annual: [
@@ -120,7 +38,7 @@ const packages = {
       name: '2 bedrooms',
       description: 'Get an idea of a two bedroom you can get with your budget',
       buttonText: 'View all',
-      //priceWithUnit: '$0',
+
       points: [
         {
           id: 1,
@@ -142,8 +60,6 @@ const packages = {
       name: '3 Bedrooms',
       description: 'Get an idea of a three bedroom you can get with your budget',
       buttonText: 'View all',
-      /*priceWithUnit: '$25',
-      anotherOption: 'Or Start 10 Days trail',*/
       points: [
         {
           id: 1,
@@ -167,8 +83,6 @@ const packages = {
       name: '4 Bedrooms',
       description: 'Get an idea of a four bedroom you can get with your budget',
       buttonText: 'View all',
-      /*priceWithUnit: '$39',
-      anotherOption: 'Or Start 10 Days trail',*/
       points: [
         {
           id: 1,
@@ -264,7 +178,7 @@ export default function Package() {
   };
 
   return (
-    <section id="pricing" sx={{ variant: 'section.pricing' }}>
+    <section id="resources" sx={{ variant: 'section.resources' }}>
       <Container>
         <SectionHeader
           slogan="Resources"

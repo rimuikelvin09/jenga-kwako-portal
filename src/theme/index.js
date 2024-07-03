@@ -95,10 +95,10 @@ export default {
     feature: {
       pb: [8, null, 9, null, null, 10, null, '170px'],
     },
-    news: {
+    otherProducts: {
       pb: [8, null, 9, null, null, 10, null, '170px'],
     },
-    coreFeature: {
+    featuredProject: {
       pb: [8, null, 9, null, null, 10, null, '170px'],
       overflow: 'hidden',
     },
@@ -107,10 +107,10 @@ export default {
       pb: ['90px', null, 9, null, null, 10, null, '190px'],
       overflow: 'hidden',
     },
-    services: {
+    about: {
       pb: ['90px', null, 9, null, null, 10, null, '150px'],
     },
-    pricing: {
+    resources: {
       pt: [8, null, 9, null, null, 10, null, '180px'],
       pb: ['90px', null, 9, null, null, 10, null, '180px'],
     },

@@ -17,7 +17,7 @@ const data = {
 
 export default function CoreFeature() {
   return (
-    <section sx={{ variant: 'section.coreFeature' }}>
+    <section id='featured-Project' sx={{ variant: 'section.featuredProject' }}>
       <Container sx={styles.containerBox}>
         <Box sx={styles.contentBox}>
           <TextFeature

@@ -34,9 +34,9 @@ const data = [
   },
 ];
 
-export default function WorkFlow() {
+export default function Process() {
   return (
-    <section id='workflow' sx={styles.workflow}>
+    <section id='process' sx={styles.process}>
       <Container>
         <SectionHeader
           slogan="Let's break it down "
@@ -61,7 +61,7 @@ export default function WorkFlow() {
 }
 
 const styles = {
-  workflow: {
+  process: {
     backgroundColor: 'primary',
     backgroundImage: `url(${PatternBG})`,
     backgroundRepeat: `no-repeat`,

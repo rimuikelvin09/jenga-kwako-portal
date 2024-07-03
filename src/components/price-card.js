@@ -1,13 +1,14 @@
 import { Box, Card, Text, Heading, Button } from 'theme-ui';
 import React from 'react';
 import List from './list';
+import { Link } from './link';
 
 export default function PriceCard({
   data: {
     header,
     name,
     description,
-    //priceWithUnit,
+    btnURL = '#',
     buttonText = 'Download',
     anotherOption,
     points,
@@ -27,22 +28,22 @@ export default function PriceCard({
           <Text as="p">{description}</Text>
         </Box>
         <List items={points} childStyle={styles.listItem} />
-        <Text className="package__price" sx={styles.price}>
-          {/**  {priceWithUnit}*/}
-          {/*<span>/Monthly</span>*/}
-        </Text>
+
         <Box sx={styles.buttonGroup}>
           <Button variant="primary" aria-label={buttonText}>
             {buttonText}
           </Button>
           {anotherOption && (
-            <Button
-              variant="textButton"
-              className="free__trail"
-              aria-label={anotherOption}
-            >
-              {anotherOption}
-            </Button>
+            <Link href={btnURL} variant="default">
+              <Button
+                variant="textButton"
+                className="free__trail"
+                aria-label={anotherOption}
+              >
+                {anotherOption}
+              </Button>
+            </Link>
+
           )}
         </Box>
       </Box>

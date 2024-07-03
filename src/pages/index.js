@@ -5,16 +5,16 @@ import theme from 'theme';
 import SEO from 'components/seo';
 import Layout from 'components/layout';
 import Banner from '../sections/banner';
-import KeyFeature from '../sections/key-feature';
-import ServiceSection from '../sections/service-section';
-import Feature from '../sections/feature';
-import CoreFeature from '../sections/core-feature';
-import WorkFlow from '../sections/workflow';
-import Package from '../sections/package';
-import TeamSection from '../sections/team-section';
+//import KeyFeature from '../sections/key-feature';
+import AboutSection from '../sections/about-section';
+//import Feature from '../sections/feature';
+import FeaturedProject from '../sections/featured-project';
+import Process from '../sections/process';
+import Resources from '../sections/resources';
+//import TeamSection from '../sections/team-section';
 import TestimonialCard from '../sections/testimonial';
-import BlogSection from '../sections/blog-section';
-import Subscribe from '../sections/subscribe';
+import OtherProducts from '../sections/other-products';
+//import Subscribe from '../sections/subscribe';
 
 export default function IndexPage() {
   return (
@@ -24,14 +24,14 @@ export default function IndexPage() {
           <SEO title="Jenga Kwako | Benchmark Building Solutions ltd" />
           <Banner />
           {/*<KeyFeature />*/}
-          <ServiceSection />
-          <WorkFlow />
+          <AboutSection />
+          <Process />
           {/*<Feature />*/}
-          <Package />
-          <CoreFeature />
+          <Resources />
+          <FeaturedProject />
           {/*<TeamSection />*/}
           <TestimonialCard />
-          <BlogSection />
+          <OtherProducts />
           {/**<Subscribe /> */}
         </Layout>
       </StickyProvider>
