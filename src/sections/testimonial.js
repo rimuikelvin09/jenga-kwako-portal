@@ -8,17 +8,11 @@ import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
 import { useState } from 'react';
 
-import Avatar1 from 'assets/testimonial/avatar1.png';
-import Avatar2 from 'assets/testimonial/avatar2.png';
-import Avatar3 from 'assets/testimonial/avatar3.png';
-import Avatar4 from 'assets/testimonial/avatar4.png';
 
 const data = [
   {
     id: 1,
-    title: 'It is not easy if you don\'t have the cash',
-    /*avatar: Avatar1,
-    designation: '@denny.hil',*/
+    quote: '"It is not easy if you don\'t have the cash"',
     name: 'Phylis Wanjiru',
     videoUrl: 'https://youtu.be/szBXNnu1vPI?si=lHD-yp3dNm-FToDF',
     videoId: 'szBXNnu1vPI',
@@ -27,10 +21,8 @@ const data = [
   },
   {
     id: 2,
-    title: 'I liked the quality of work',
+    quote: '"I liked the quality of work"',
     videoUrl: 'https://www.youtube.com/watch?v=0THiQ6iq3C0&t=4s',
-    /*avatar: Avatar3,
-    designation: '@denny.hil',*/
     name: 'Evans Kiprotich',
     videoId: '0THiQ6iq3C0',
     videoType: 'youtube',
@@ -38,10 +30,8 @@ const data = [
   },
   {
     id: 3,
-    title: 'We decided not to continue paying rent',
+    quote: '"We decided not to continue paying rent"',
     videoUrl: 'https://youtu.be/s0j0MNgvX4U',
-    /*avatar: Avatar2,
-    designation: '@denny.hil', */
     name: 'Rosemary',
     videoId: 's0j0MNgvX4U',
     videoType: 'youtube',
@@ -113,18 +103,19 @@ export default function TestimonialCard() {
         >
           {data.map((item) => (
             <Box sx={styles.reviewCard} key={`testimonial--key${item.id}`}>
-              {/*<Rating rating={item.review} /> */}
-              <Heading as="h3" sx={styles.title}>
-                {item.title}
-              </Heading>
-              <Image src={item.thumbnail} sx={styles.thumbnail} onClick={() => handleVideoOpen(item.videoId, item.videoType)} />
+              <Box sx={styles.thumbnailWrapper} onClick={() => handleVideoOpen(item.videoId, item.videoType)}>
+                <Image src={item.thumbnail} sx={styles.thumbnail} />
+                <Box sx={styles.playButton}>
+                  <IoIosPlay size="30px" color="white" />
+                </Box>
+              </Box>
               <div className="card-footer">
-                {/*<div className="image">
-                  <Image src={item.avatar} alt="Client Image" />
-                </div>*/}
                 <div className="reviewer-info">
-                  <Heading as="h4" sx={styles.heading}>
+                  <Heading as="h3" sx={styles.heading}>
                     {item.name}
+                  </Heading>
+                  <Heading as="h4" sx={styles.quote}>
+                    {item.quote}
                   </Heading>
                   <Text sx={styles.designation}>{item.designation}</Text>
                 </div>
@@ -250,9 +241,52 @@ const styles = {
       },
     },
   },
-  title: {
+  thumbnailWrapper: {
+    position: 'relative',
+    cursor: 'pointer',
+    '&:hover .playButton': {
+      backgroundColor: 'dark',
+    },
+  },
+  thumbnail: {
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+    borderRadius: '6px',
+  },
+  playButton: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '60px',
+    height: '60px',
+    borderRadius: '50%',
+    backgroundColor: 'rgba(46, 134, 193, 0.5)', // transparent blue
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s',
+    animation: 'pulse 2s infinite', // add pulse effect
+    '@keyframes pulse': {
+      '0%': {
+        boxShadow: '0 0 0 0 rgba(255, 0, 0, 0.7)', // red pulse start
+      },
+      '70%': {
+        boxShadow: '0 0 0 20px rgba(255, 0, 0, 0)', // red pulse end
+      },
+      '100%': {
+        boxShadow: '0 0 0 0 rgba(255, 0, 0, 0)', // red pulse reset
+      },
+    },
+    '& svg': {
+      color: 'white', // white play icon
+    },
+  },
+  quote: {
     fontSize: [1, 2],
-    fontWeight: 700,
+    fontWeight: 400,
     mb: [3, null, null, '22px'],
     color: 'text',
     lineHeight: 1.6,
@@ -275,21 +309,5 @@ const styles = {
     fontWeight: '500',
     fontSize: 1,
     lineHeight: 1.4,
-  },
-  playButton: {
-    width: '60px',
-    height: '60px',
-    borderRadius: '50%',
-    backgroundColor: 'primary',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: '0 auto',
-    cursor: 'pointer',
-    mt: 3,
-    transition: 'background-color 0.3s',
-    '&:hover': {
-      backgroundColor: 'dark',
-    },
   },
 };

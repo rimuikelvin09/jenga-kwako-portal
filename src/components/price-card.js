@@ -34,7 +34,7 @@ export default function PriceCard({
             {buttonText}
           </Button>
           {anotherOption && (
-            <Link href={btnURL} variant="default">
+            <a href={btnURL} variant="default">
               <Button
                 variant="textButton"
                 className="free__trail"
@@ -42,7 +42,7 @@ export default function PriceCard({
               >
                 {anotherOption}
               </Button>
-            </Link>
+            </a>
 
           )}
         </Box>
