@@ -5,7 +5,9 @@ import { Text, Heading, Image, Box, Link } from 'theme-ui';
 export default function TeamCard({ src, altText, title, designation, social }) {
   return (
     <Box sx={styles.card}>
-      <Image src={src} alt={altText} sx={styles.memberThumb} />
+      <Box sx={styles.memberThumb}>
+        <Image src={src} alt={altText} sx={styles.memberThumbImage} />
+      </Box>
       <Box sx={styles.infoWrapper}>
         <Heading className="info__name" sx={styles.infoWrapper.name}>
           {title}
@@ -14,13 +16,13 @@ export default function TeamCard({ src, altText, title, designation, social }) {
           {designation}
         </Text>
       </Box>
-      <Box sx={styles.socialShare} className="social__share">
+      {/** <Box sx={styles.socialShare} className="social__share">
         {social.map((item) => (
           <Link key={item.id} href={item.path} className={item.name}>
             {item.icon}
           </Link>
         ))}
-      </Box>
+      </Box> */}
     </Box>
   );
 }
@@ -60,6 +62,15 @@ const styles = {
     border: '2px solid',
     borderColor: 'primary',
     borderRadius: '50%',
+    overflow: 'hidden',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  memberThumbImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
   },
   infoWrapper: {
     width: '100%',

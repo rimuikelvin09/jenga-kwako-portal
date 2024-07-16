@@ -8,27 +8,32 @@ import { Link } from 'react-scroll';
 import {
   FaFacebookF,
   FaTwitter,
-  FaGithubAlt,
-  FaDribbble,
+  FaYoutube,
+  FaInstagram,
+  FaLinkedinIn,
 } from 'react-icons/fa';
 import menuItems from './header.data';
 
 const social = [
   {
-    path: '/',
+    path: 'https://www.instagram.com/jengakwako_ke/',
+    icon: <FaInstagram />,
+  },
+  {
+    path: 'https://www.facebook.com/bbsltdke/',
     icon: <FaFacebookF />,
   },
   {
-    path: '/',
+    path: 'https://x.com/BenchmarkBuild4',
     icon: <FaTwitter />,
   },
   {
-    path: '/',
-    icon: <FaGithubAlt />,
+    path: 'https://www.youtube.com/@bbsltd_ke',
+    icon: <FaYoutube />,
   },
   {
-    path: '/',
-    icon: <FaDribbble />,
+    path: 'https://www.linkedin.com/company/benchmark-building-solutions-ltd/',
+    icon: <FaLinkedinIn />,
   },
 ];
 
