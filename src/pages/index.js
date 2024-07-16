@@ -10,7 +10,7 @@ import AboutSection from '../sections/about-section';
 //import Feature from '../sections/feature';
 import FeaturedProject from '../sections/featured-project';
 import Process from '../sections/process';
-import Resources from '../sections/resources';
+//import Resources from '../sections/resources';
 import TeamSection from '../sections/team-section';
 import TestimonialCard from '../sections/testimonial';
 import OtherProducts from '../sections/other-products';
@@ -27,7 +27,7 @@ export default function IndexPage() {
           <AboutSection />
           <Process />
           {/*<Feature />*/}
-          <Resources />
+          {/*<Resources />*/}
           <FeaturedProject />
           <TeamSection />
           <TestimonialCard />
