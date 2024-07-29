@@ -126,8 +126,10 @@ const styles = {
     },
   },
   navLink: {
+    textDecoration: 'none',
+    color: 'text',
     fontSize: 2,
-    fontWeight: 'body',
+    fontWeight: 'heading',
     px: 5,
     cursor: 'pointer',
     lineHeight: '1.2',

@@ -66,7 +66,7 @@ export default function Footer() {
               <Box sx={styles.footer.contactInfo}>
                 {data.getInTouch.details.map(({ icon: IconComponent, info }, i) => (
                   <Box key={i} sx={styles.footer.contactItem}>
-                    <IconComponent style={{ marginRight: '10px' }} />
+                    <IconComponent sx={styles.footer.contactIcon} />
                     <Text>{info}</Text>
                   </Box>
                 ))}
@@ -77,8 +77,8 @@ export default function Footer() {
               <nav sx={styles.footer.socialLinks}>
                 <Grid sx={styles.footer.socialGrid}>
                   {data.socialMedia.links.map(({ path, icon: IconComponent }, i) => (
-                    <Box as="span" key={i} sx={styles.footer.socialIcon}>
-                      <a href={path} target="_blank" rel="noopener noreferrer">
+                    <Box as="span" key={i} >
+                      <a sx={styles.footer.socialIcon} href={path} target="_blank" rel="noopener noreferrer">
                         <IconComponent />
                       </a>
                     </Box>
@@ -147,12 +147,26 @@ const styles = {
     contactItem: {
       display: 'flex',
       alignItems: 'center',
+      transition: 'all 0.25s',
+      cursor: 'pointer',
+      ':last-child': {
+        mb: '0',
+      },
+      '&:hover': {
+        color: 'primary',
+      },
+    },
+    contactIcon: {
+      color: 'Primary',
+      marginRight: '10px',
     },
     socialGrid: {
       display: 'grid',
       gridTemplateColumns: ['1fr', '1fr', '1fr', '1fr', 'repeat(5, 1fr)'],
       gap: '30px',
       justifyItems: 'center',
+      display: 'flex',
+      flexDirection: 'row'
     },
     socialLinks: {
       display: 'flex',
@@ -163,7 +177,7 @@ const styles = {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: 'text',
+      color: 'secondary',
       fontSize: 24,
       mb: '10px',
       transition: 'all 0.25s',
