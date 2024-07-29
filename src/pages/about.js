@@ -54,14 +54,14 @@ const styles = {
         zIndex: 2,
         overflow: 'hidden', // Ensure content does not overflow the section
         background: 'radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(240, 100%, 96%, 1) 100%);', // Gradient overlay 
-        //backgroundImage: `url(${BannerBg})`, // Set background image
         backgroundSize: 'cover', // Cover the entire area
-        // backgroundAttachment: 'fixed', // Fixed background to achieve parallax effect
         backgroundPosition: 'center', // Center the background image
+        '@media screen and (max-width: 768px)': {
+            height: 'auto',  // Hide the image on mobile devices
+        },
         '&::before': {
             position: 'absolute',
             content: '""',
-            //bottom: 6,
             top: 10,
             left: 0,
             height: '100%',
@@ -89,6 +89,7 @@ const styles = {
             '@media screen and (max-width: 768px)': {
                 display: 'none',  // Hide the image on mobile devices
             },
+
         },
 
         container: {
