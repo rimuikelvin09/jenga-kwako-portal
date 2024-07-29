@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Button } from 'theme-ui';
 import { keyframes } from '@emotion/core';
-import { Link } from 'react-scroll';
+//import { Link } from 'react-scroll';
+import Link from 'next/link';//to navigate to other pages
 import Logo from 'components/logo';
 import LogoDark from 'assets/Jengalogo.png';
 import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
@@ -19,9 +20,9 @@ export default function Header({ className }) {
         <Container sx={styles.container}>
           <Logo src={LogoDark} style={{ width: '50px', height: 'auto' }} />
 
-          <Flex as="nav" sx={styles.nav}>
+          {/**   <Flex as="nav" sx={styles.nav}>
             {menuItems.map(({ path, label }, i) => (
-              <Link
+            <Link
                 activeClass="active"
                 to={path}
                 spy={true}
@@ -31,6 +32,15 @@ export default function Header({ className }) {
                 key={i}
               >
                 {label}
+              </Link>
+              
+            ))}
+          </Flex>  */}
+
+          <Flex as="nav" sx={styles.nav}>
+            {menuItems.map(({ path, label }, i) => (
+              <Link href={path} key={i} passHref>
+                <a sx={styles.navLink}>{label}</a>
               </Link>
             ))}
           </Flex>
@@ -57,7 +67,7 @@ export default function Header({ className }) {
           </div>
         )
       }
-    </DrawerProvider>
+    </DrawerProvider >
 
   );
 }
@@ -114,19 +124,19 @@ const styles = {
     '@media screen and (min-width: 1024px)': {
       display: 'block',
     },
-    a: {
-      fontSize: 2,
-      fontWeight: 'body',
-      px: 5,
-      cursor: 'pointer',
-      lineHeight: '1.2',
-      transition: 'all 0.15s',
-      '&:hover': {
-        color: 'primary',
-      },
-      '&.active': {
-        color: 'primary',
-      },
+  },
+  navLink: {
+    fontSize: 2,
+    fontWeight: 'body',
+    px: 5,
+    cursor: 'pointer',
+    lineHeight: '1.2',
+    transition: 'all 0.15s',
+    '&:hover': {
+      color: 'primary',
+    },
+    '&.active': {
+      color: 'primary',
     },
   },
   formOverlay: {

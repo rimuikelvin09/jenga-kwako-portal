@@ -5,7 +5,7 @@ import BannerImg from 'assets/banner-letter.png';
 import ShapeLeft from 'assets/shape-left1.png';
 //import ShapeRight from 'assets/shape-right.png';
 import BannerBg from 'assets/bannerbg-parallax1.jpg';
-import { transform } from 'framer-motion';
+//import { transform } from 'framer-motion';
 
 export default function Banner() {
   return (

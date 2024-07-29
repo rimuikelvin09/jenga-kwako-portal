@@ -4,27 +4,24 @@ export default [
     label: 'Home',
   },**/
   {
-    path: 'about',
-    label: 'About',
+    path: '/about',
+    label: 'About Us',
   },
   {
-    path: 'process',
-    label: 'How It Works',
+    path: '/clientarea',
+    label: 'Client Area',
   },
   {
-    path: 'resources',
-    label: 'Resources',
+    path: '/',
+    label: 'EPS Technology',
   },
   {
-    path: 'featured-Project',
-    label: 'Featured Project',
+    path: '/',
+    label: 'Sample Plans',
   },
   {
-    path: 'testimonial',
-    label: 'Testimonial',
-  },
-  {
-    path: 'other-products',
-    label: 'Other Products'
+    path: '/contact',
+    label: 'Contact Us',
   }
+
 ];
