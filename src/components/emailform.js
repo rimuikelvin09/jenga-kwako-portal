@@ -6,6 +6,7 @@ import { Container, Flex, Box, Button, Input, Text, Heading, Textarea } from 'th
 
 export default function ContactForm() {
   // References for input fields
+  const nameInputEl = useRef(null);
   const emailInputEl = useRef(null);
   const messageInputEl = useRef(null);
 
@@ -23,6 +24,7 @@ export default function ContactForm() {
         submitting: false,
         info: { error: false, msg: msg },
       });
+      nameInputEl.current.value = '';
       emailInputEl.current.value = '';
       messageInputEl.current.value = '';
     } else {
@@ -36,9 +38,10 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
 
-    // Send request to the API with email and message
+    // Send request to the API with name, email, and message
     const res = await fetch('/api/contact', {
       body: JSON.stringify({
+        name: nameInputEl.current.value,
         email: emailInputEl.current.value,
         message: messageInputEl.current.value,
       }),
@@ -65,6 +68,17 @@ export default function ContactForm() {
             </Text>
             <form onSubmit={submitForm}>
               <Flex sx={styles.form}>
+                <label htmlFor="name" sx={{ variant: 'styles.srOnly' }}>
+                  Name
+                </label>
+                <Input
+                  ref={nameInputEl}
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Name *"
+                  required
+                />
                 <label htmlFor="email" sx={{ variant: 'styles.srOnly' }}>
                   Email Address
                 </label>
@@ -95,7 +109,6 @@ export default function ContactForm() {
                     <div className="success">{status.info.msg}</div>
                   )}
                 </div>
-
               </Flex>
               <Button
                 sx={styles.submitButton}
@@ -121,8 +134,7 @@ export default function ContactForm() {
 const styles = {
   submitButton: {
     color: 'text',
-    backgroundColor: 'white'
-
+    backgroundColor: 'white',
   },
   contentBox: {
     backgroundColor: 'primary',
@@ -159,7 +171,7 @@ const styles = {
     overflow: 'hidden',
     p: [0, 1],
     flexDirection: ['column'],
-    '[type="email"], textarea': {
+    '[type="text"], [type="email"], textarea': {
       border: 0,
       borderBottom: '1px solid lightgray',
       borderRadius: 0,

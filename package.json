@@ -13,6 +13,7 @@
   "dependencies": {
     "@next/env": "^14.2.4",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
+    "@react-google-maps/api": "^2.19.3",
     "dotenv": "^8.2.0",
     "encoding": "^0.1.13",
     "framer-motion": "^2.7.5",

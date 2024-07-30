@@ -8,6 +8,9 @@ import SEO from '../components/seo';
 
 import Emailform from '../components/emailform';
 import FAQComponent from '../components/faq';
+import TwitterFeed from 'components/socialfeed/twitterfeed';
+import FacebookFeed from 'components/socialfeed/fbfeed';
+//import Maps from '../components/maps';
 
 export default function AboutPage() {
     return (
@@ -26,7 +29,17 @@ export default function AboutPage() {
                             </div>
                         </div>
                     </section>
-
+                    {/*<Maps />**/}
+                    <section sx={styles.feedsSection}>
+                        <div sx={styles.feedsContainer}>
+                            <div sx={styles.feedColumn}>
+                                <TwitterFeed />
+                            </div>
+                            <div sx={styles.feedColumn}>
+                                <FacebookFeed />
+                            </div>
+                        </div>
+                    </section>
                 </Layout>
             </StickyProvider>
         </ThemeProvider>
@@ -50,5 +63,24 @@ const styles = {
     },
     rightColumn: {
         flex: [1, null, 1],
+    },
+    feedsSection: {
+        mt: '50px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: ['column', null, 'row'],
+        gap: 0, // No gap between columns
+    },
+    feedsContainer: {
+        display: 'flex',
+        width: '100%',
+        maxWidth: '1200px', // Adjust as needed
+        gap: 0, // No gap between columns
+    },
+    feedColumn: {
+        flex: 1,
+        padding: '10px', // Adjust padding as needed
+        boxSizing: 'border-box',
     },
 };
