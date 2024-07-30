@@ -4,8 +4,8 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import Drawer from 'components/drawer';
 import { DrawerContext } from '../../contexts/drawer/drawer.context';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
-import { Link } from 'react-scroll';
-//import Link from 'next/link';
+//import { Link } from 'react-scroll';
+import Link from 'next/link';
 import {
   FaFacebookF,
   FaTwitter,
@@ -66,16 +66,8 @@ const MobileDrawer = () => {
         <Box sx={styles.content}>
           <Box sx={styles.menu}>
             {menuItems.map(({ path, label }, i) => (
-              <Link
-                activeClass="active"
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
-              >
-                {label}
+              <Link href={path} key={i} passHref>
+                <a sx={styles.navLink}>{label}</a>
               </Link>
             ))}
           </Box>
@@ -84,11 +76,12 @@ const MobileDrawer = () => {
             <Box sx={styles.social}>
               {social.map(({ path, icon }, i) => (
                 <Box as="span" key={i} sx={styles.social.icon}>
-                  <Link to={path}>{icon}</Link>
+                  <Link href={path}>{icon}</Link>
                 </Box>
               ))}
             </Box>
           </Box>
+
         </Box>
       </Scrollbars>
     </Drawer>
@@ -96,6 +89,22 @@ const MobileDrawer = () => {
 };
 
 const styles = {
+  navLink: {
+    textDecoration: 'none',
+    color: 'text',
+    fontSize: 2,
+    fontWeight: 'heading',
+    px: 5,
+    cursor: 'pointer',
+    lineHeight: '1.2',
+    transition: 'all 0.15s',
+    '&:hover': {
+      color: 'primary',
+    },
+    '&.active': {
+      color: 'primary',
+    },
+  },
   handler: {
     display: 'flex',
     alignItems: 'center',

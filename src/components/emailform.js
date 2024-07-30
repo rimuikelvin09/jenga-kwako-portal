@@ -2,100 +2,91 @@
 import { useRef, useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import { jsx } from 'theme-ui';
-import { Container, Flex, Box, Button, Input, Text, Heading } from 'theme-ui';
+import { Container, Flex, Box, Button, Input, Text, Heading, Textarea } from 'theme-ui';
 
-export default function Subscribe() {
-  // 1. Create a reference to the input so we can fetch/clear it's value.
-  const inputEl = useRef(null);
-  // 2. Hold a status in state to handle the response from our API.
+export default function ContactForm() {
+  // References for input fields
+  const emailInputEl = useRef(null);
+  const messageInputEl = useRef(null);
+
+  // State for handling form submission status
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
     info: { error: false, msg: null },
   });
-  const handleMailChimpResponse = (errorMsg, successMsg) => {
-    if (errorMsg) {
-      // 4. If there was an error, update the message in state.
-      setStatus({
-        info: { error: true, msg: errorMsg },
-      });
 
-      return;
-    }
-
-    // 5. Clear the input value and show a success message.
-    setStatus({
-      submitted: true,
-      submitting: false,
-      info: { error: false, msg: successMsg },
-    });
-    inputEl.current.value = '';
-  };
-
-  const handleSendGridResponse = (status, msg) => {
+  const handleResponse = (status, msg) => {
     if (status === 200) {
-      // 5. Clear the input value and show a success message.
       setStatus({
         submitted: true,
         submitting: false,
         info: { error: false, msg: msg },
       });
-      inputEl.current.value = '';
+      emailInputEl.current.value = '';
+      messageInputEl.current.value = '';
     } else {
       setStatus({
         info: { error: true, msg: msg },
       });
     }
   };
-  const subscribe = async (e) => {
+
+  const submitForm = async (e) => {
     e.preventDefault();
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
 
-    // 3. Send a request to our API with the user's email address.
-    const res = await fetch('/api/subscribe', {
+    // Send request to the API with email and message
+    const res = await fetch('/api/contact', {
       body: JSON.stringify({
-        email: inputEl.current.value,
+        email: emailInputEl.current.value,
+        message: messageInputEl.current.value,
       }),
       headers: {
         'Content-Type': 'application/json',
       },
       method: 'POST',
     });
-    //for mailChimp integration
-    const { error } = await res.json();
-    handleMailChimpResponse(
-      error,
-      'Success! 🎉 You are now subscribed to the newsletter.'
-    );
-    // For sendGrid integration
+
     const text = await res.text();
-    handleSendGridResponse(res.status, text);
+    handleResponse(res.status, text);
   };
+
   return (
     <section>
       <Container>
         <Box sx={styles.contentBox}>
           <Box sx={styles.contentBoxInner}>
             <Heading as="h2" sx={styles.title}>
-              Subscribe to our Blog
+              Email Us
             </Heading>
             <Text as="p" sx={styles.description}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod
-              tempor incididunt labore dolore.
+              Feel free to reach out to us with any inquiries or feedback. We will be happy to respond
             </Text>
-            <form onSubmit={subscribe}>
-              <Flex sx={styles.subscribeForm}>
+            <form onSubmit={submitForm}>
+              <Flex sx={styles.form}>
                 <label htmlFor="email" sx={{ variant: 'styles.srOnly' }}>
                   Email Address
                 </label>
                 <Input
-                  ref={inputEl}
+                  ref={emailInputEl}
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="Enter your email address"
+                  placeholder="Email Address *"
+                  required
                 />
-
+                <label htmlFor="message" sx={{ variant: 'styles.srOnly' }}>
+                  Message
+                </label>
+                <Textarea
+                  ref={messageInputEl}
+                  id="message"
+                  name="message"
+                  placeholder="Your Message"
+                  required
+                  rows={4}
+                />
                 <div>
                   {status.info.error && (
                     <div className="error">Error: {status.info.msg}</div>
@@ -104,19 +95,21 @@ export default function Subscribe() {
                     <div className="success">{status.info.msg}</div>
                   )}
                 </div>
-                <Button
-                  type="submit"
-                  disabled={status.submitting}
-                  className="subscribe__btn"
-                  aria-label="Subscribe"
-                >
-                  {!status.submitting
-                    ? !status.submitted
-                      ? 'Subscribe'
-                      : 'Submitted'
-                    : 'Submitting...'}
-                </Button>
+
               </Flex>
+              <Button
+                sx={styles.submitButton}
+                type="submit"
+                disabled={status.submitting}
+                className="form__btn"
+                aria-label="Submit"
+              >
+                {!status.submitting
+                  ? !status.submitted
+                    ? 'Submit'
+                    : 'Submitted'
+                  : 'Submitting...'}
+              </Button>
             </form>
           </Box>
         </Box>
@@ -126,11 +119,17 @@ export default function Subscribe() {
 }
 
 const styles = {
+  submitButton: {
+    color: 'text',
+    backgroundColor: 'white'
+
+  },
   contentBox: {
     backgroundColor: 'primary',
-    textAlign: 'center',
+    textAlign: 'left',
     borderRadius: 10,
     py: ['60px', null, 8],
+    // mt: '100px' // the margin on top to prevent it from touching the navbar
   },
   contentBoxInner: {
     width: ['100%', null, '540px', '600px'],
@@ -150,41 +149,43 @@ const styles = {
     fontSize: ['15px', 2, null, null, null, '17px', null, 3],
     color: 'white',
     lineHeight: [1.85, null, null, 2],
-    px: [0, null, 5],
+    px: [0, null, 0],
   },
-  subscribeForm: {
+  form: {
     mt: [6, null, null, 7],
+    mb: '3',
     backgroundColor: ['transparent', 'white'],
-    borderRadius: [0, 50],
+    borderRadius: [0, 10],
     overflow: 'hidden',
     p: [0, 1],
-    flexDirection: ['column', 'row'],
-    '[type="email"]': {
+    flexDirection: ['column'],
+    '[type="email"], textarea': {
       border: 0,
-      borderRadius: 50,
+      borderBottom: '1px solid lightgray',
+      borderRadius: 0,
       fontFamily: 'body',
-      fontSize: ['14px', null, 2],
+      fontSize: ['12px', null, 2],
       fontWeight: 500,
       color: 'heading',
       py: 1,
       px: [4, null, 6],
       backgroundColor: ['white', 'transparent'],
-      height: ['52px', null, '60px'],
-      textAlign: ['center', 'left'],
+      textAlign: 'left',
       '&:focus': {
         boxShadow: '0 0 0 0px',
       },
       '::placeholder': {
-        color: 'primary',
-        opacity: 1,
+        color: 'blue',
+        opacity: .5,
       },
+      mb: 3,
     },
-    '.subscribe__btn': {
+    '.form__btn': {
       flexShrink: 0,
-      ml: [0, 2],
       backgroundColor: ['text', 'primary'],
-      mt: [2, 0],
+      mt: [2],
       py: ['15px'],
+      cursor: 'pointer',
     },
   },
 };

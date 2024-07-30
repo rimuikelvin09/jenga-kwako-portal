@@ -24,8 +24,6 @@ export default function IndexPage() {
       {/*<Resources />*/}
 
       <TestimonialCard />
-
-      {/**<Subscribe /> */}
     </Layout>
 
   );

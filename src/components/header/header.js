@@ -20,22 +20,6 @@ export default function Header({ className }) {
         <Container sx={styles.container}>
           <Logo src={LogoDark} style={{ width: '50px', height: 'auto' }} />
 
-          {/**   <Flex as="nav" sx={styles.nav}>
-            {menuItems.map(({ path, label }, i) => (
-            <Link
-                activeClass="active"
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
-              >
-                {label}
-              </Link>
-              
-            ))}
-          </Flex>  */}
 
           <Flex as="nav" sx={styles.nav}>
             {menuItems.map(({ path, label }, i) => (

@@ -1,4 +1,3 @@
-// src/pages/about.js
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { ThemeProvider } from 'theme-ui';
@@ -7,16 +6,27 @@ import theme from '../theme';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
+import Emailform from '../components/emailform';
+import FAQComponent from '../components/faq';
+
 export default function AboutPage() {
     return (
         <ThemeProvider theme={theme}>
             <StickyProvider>
                 <Layout>
                     <SEO title="Contact Us | Jenga Kwako" />
+
                     <section sx={styles.section}>
-                        <h1>Contact Us page</h1>
-                        <p>Welcome to the contact us page!</p>
+                        <div sx={styles.container}>
+                            <div sx={styles.leftColumn}>
+                                <Emailform />
+                            </div>
+                            <div sx={styles.rightColumn}>
+                                <FAQComponent />
+                            </div>
+                        </div>
                     </section>
+
                 </Layout>
             </StickyProvider>
         </ThemeProvider>
@@ -25,7 +35,20 @@ export default function AboutPage() {
 
 const styles = {
     section: {
+
         padding: '20px',
-        textAlign: 'center',
+    },
+    container: {
+        mt: '100px',
+        display: 'flex',
+        flexDirection: ['column', null, 'row'],
+    },
+    leftColumn: {
+        flex: [1, null, 2],
+        paddingRight: [0, null, '20px'],
+        paddingBottom: ['20px', null, 0],
+    },
+    rightColumn: {
+        flex: [1, null, 1],
     },
 };
