@@ -4,101 +4,103 @@ import { Link } from 'react-scroll';
 import data from './footer.data';
 import { FaChevronRight } from 'react-icons/fa';
 
-
 import Jklogo from 'assets/Jengalogo.png';
 import KMRClogo from 'assets/Kmrclogo.png';
 import Bbslogo from 'assets/Benchmarklogo.png';
 import Atlogo from 'assets/alphalogo.png';
 import Cmaxlogo from 'assets/cmaxlogo.png';
+import Footerbg from 'assets/footerbg1.jpg';
 
 export default function Footer() {
   return (
     <footer sx={styles.footer}>
-      <Container>
-        {/* Partners Section */}
-        <Box sx={styles.footer.partners}>
-          <Grid sx={styles.footer.logos}>
-            <Link path="/">
-              <Image src={Jklogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
-            </Link>
-            <Link path="/">
-              <Image src={Bbslogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
-            </Link>
-            <Link path="/">
-              <Image src={KMRClogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
-            </Link>
-            <Link path="/">
-              <Image src={Cmaxlogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
-            </Link>
-            <Link path="/">
-              <Image src={Atlogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
-            </Link>
-          </Grid>
-        </Box>
+      {/* Partners Section */}
+      <Box sx={styles.footer.partners}>
+        <Grid sx={styles.footer.logos}>
+          <Link path="/">
+            <Image src={Jklogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+          </Link>
+          <Link path="/">
+            <Image src={Bbslogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+          </Link>
+          <Link path="/">
+            <Image src={KMRClogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+          </Link>
+          <Link path="/">
+            <Image src={Cmaxlogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+          </Link>
+          <Link path="/">
+            <Image src={Atlogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+          </Link>
+        </Grid>
+      </Box>
 
-        {/* Site-Map Section */}
-        <Box sx={styles.footer.siteMap}>
-          <Grid sx={styles.footer.siteMapGrid}>
-            <Box>
-              <Heading sx={styles.footer.heading}>{data.menuItems.heading}</Heading>
-              <nav>
-                {data.menuItems.quickLinks.map(({ path, label }, i) => (
-                  <a to={path} key={i} sx={styles.footer.link}>
-                    <FaChevronRight sx={styles.footer.icon} />
-                    {label}
-                  </a>
-                ))}
-              </nav>
-            </Box>
-            <Box>
-              <Heading sx={styles.footer.heading}>{data.resources.heading}</Heading>
-              <nav>
-                {data.resources.items.map(({ path, label }, i) => (
-                  <a to={path} key={i} sx={styles.footer.link}>
-                    <FaChevronRight sx={styles.footer.icon} />
-                    {label}
-                  </a>
-                ))}
-              </nav>
-            </Box>
-            <Box>
-              <Heading sx={styles.footer.heading}>{data.getInTouch.heading}</Heading>
-              <Box sx={styles.footer.contactInfo}>
-                {data.getInTouch.details.map(({ icon: IconComponent, info }, i) => (
-                  <Box key={i} sx={styles.footer.contactItem}>
-                    <IconComponent sx={styles.footer.contactIcon} />
-                    <Text>{info}</Text>
-                  </Box>
-                ))}
+      <Box sx={styles.footer.siteMapBg}>
+        <Container sx={styles.footer.siteMapContainer}>
+          {/* Site-Map Section */}
+          <Box sx={styles.footer.siteMap}>
+            <Grid sx={styles.footer.siteMapGrid}>
+              <Box>
+                <Heading sx={styles.footer.heading}>{data.menuItems.heading}</Heading>
+                <nav>
+                  {data.menuItems.quickLinks.map(({ path, label }, i) => (
+                    <a to={path} key={i} sx={styles.footer.link}>
+                      <FaChevronRight sx={styles.footer.icon} />
+                      {label}
+                    </a>
+                  ))}
+                </nav>
               </Box>
-            </Box>
-            <Box>
-              <Heading sx={styles.footer.heading}>{data.socialMedia.heading}</Heading>
-              <nav sx={styles.footer.socialLinks}>
-                <Grid sx={styles.footer.socialGrid}>
-                  {data.socialMedia.links.map(({ path, icon: IconComponent }, i) => (
-                    <Box as="span" key={i} >
-                      <a sx={styles.footer.socialIcon} href={path} target="_blank" rel="noopener noreferrer">
-                        <IconComponent />
-                      </a>
+              <Box>
+                <Heading sx={styles.footer.heading}>{data.resources.heading}</Heading>
+                <nav>
+                  {data.resources.items.map(({ path, label }, i) => (
+                    <a to={path} key={i} sx={styles.footer.link}>
+                      <FaChevronRight sx={styles.footer.icon} />
+                      {label}
+                    </a>
+                  ))}
+                </nav>
+              </Box>
+              <Box>
+                <Heading sx={styles.footer.heading}>{data.getInTouch.heading}</Heading>
+                <Box sx={styles.footer.contactInfo}>
+                  {data.getInTouch.details.map(({ icon: IconComponent, info }, i) => (
+                    <Box key={i} sx={styles.footer.contactItem}>
+                      <IconComponent sx={styles.footer.contactIcon} />
+                      <Text>{info}</Text>
                     </Box>
                   ))}
-                </Grid>
-              </nav>
-            </Box>
-          </Grid>
-        </Box>
+                </Box>
+              </Box>
+              <Box>
+                <Heading sx={styles.footer.heading}>{data.socialMedia.heading}</Heading>
+                <nav sx={styles.footer.socialLinks}>
+                  <Grid sx={styles.footer.socialGrid}>
+                    {data.socialMedia.links.map(({ path, icon: IconComponent }, i) => (
+                      <Box as="span" key={i}>
+                        <a sx={styles.footer.socialIcon} href={path} target="_blank" rel="noopener noreferrer">
+                          <IconComponent />
+                        </a>
+                      </Box>
+                    ))}
+                  </Grid>
+                </nav>
+              </Box>
+            </Grid>
+          </Box>
+        </Container>
+      </Box>
 
-        {/* Copywriter Section */}
-        <Box sx={styles.footer.copywriter}>
-          <Grid sx={styles.footer.copywriterGrid}>
-            <Text sx={styles.footer.copyright}>
-              ©️ {new Date().getFullYear()} Benchmark Building Solutions Ltd
-            </Text>
-            <Text>Powered by AlphatechInsights</Text>
-          </Grid>
-        </Box>
-      </Container>
+      {/* Copywriter Section */}
+      <Box sx={styles.footer.copywriter}>
+        <Grid sx={styles.footer.copywriterGrid}>
+          <Text sx={styles.footer.copyright}>
+            ©️ {new Date().getFullYear()} Benchmark Building Solutions Ltd🔴
+          </Text>
+          <Text>Powered by AlphatechInsights</Text>
+        </Grid>
+      </Box>
     </footer>
   );
 }
@@ -106,7 +108,7 @@ export default function Footer() {
 const styles = {
   footer: {
     partners: {
-      mb: '40px',
+      mb: '100px',
     },
     logos: {
       display: 'flex',
@@ -114,6 +116,31 @@ const styles = {
       alignItems: 'center',
       gap: '30px',
       mb: '20px',
+    },
+    siteMapBg: {
+      pt: '50px',
+      pb: '50px',
+      background: `url(${Footerbg}) no-repeat center center`,
+      backgroundSize: 'cover',
+      position: 'relative',
+      width: '100%', // Span the full width of the viewport
+      '::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(20, 48, 86, .96)', // Overlay color
+        zIndex: 1,
+      },
+    },
+    siteMapContainer: {
+      position: 'relative',
+      zIndex: 2,
+      maxWidth: '1200px', // Restrict content width
+      mx: 'auto', // Center the container
+      px: [3, 5], // Add some padding on the sides
     },
     siteMap: {
       mb: '40px',
@@ -127,7 +154,7 @@ const styles = {
     },
     link: {
       fontSize: [1, '15px'],
-      color: 'text',
+      color: 'white',
       fontWeight: '400',
       mb: 2,
       cursor: 'pointer',
@@ -145,6 +172,7 @@ const styles = {
       gap: '10px',
     },
     contactItem: {
+      color: 'white',
       display: 'flex',
       alignItems: 'center',
       transition: 'all 0.25s',
@@ -157,7 +185,7 @@ const styles = {
       },
     },
     contactIcon: {
-      color: 'Primary',
+      color: 'primary',
       marginRight: '10px',
     },
     socialGrid: {
@@ -166,7 +194,7 @@ const styles = {
       gap: '30px',
       justifyItems: 'center',
       display: 'flex',
-      flexDirection: 'row'
+      flexDirection: 'row',
     },
     socialLinks: {
       display: 'flex',
@@ -177,7 +205,7 @@ const styles = {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: 'secondary',
+      color: 'primary',
       fontSize: 24,
       mb: '10px',
       transition: 'all 0.25s',
@@ -186,14 +214,29 @@ const styles = {
         mb: '0',
       },
       '&:hover': {
-        color: 'primary',
+        color: 'white',
       },
     },
+    heading: {
+      fontSize: 3,
+      color: 'muted',
+      lineHeight: 1.4,
+      fontWeight: 700,
+      mb: [2, null, 3, 2, 3],
+      cursor: 'pointer',
+    },
+    icon: {
+      color: 'primary',
+      marginRight: '8px',
+    },
+
     copywriter: {
       borderTop: '1px solid',
       borderTopColor: 'border_color',
-      pt: [7, null, 8],
-      pb: ['40px', null, '100px'],
+      pt: [6, null, 7],
+      pb: ['10px', null, '30px'],
+      pl: ['10px', null, '100px'], // Padding-left changes based on breakpoints
+      pr: ['20px', null, '100px'], // Padding-right changes based on breakpoints
       textAlign: 'left',
     },
     copywriterGrid: {
@@ -206,17 +249,5 @@ const styles = {
       fontSize: [1, '15px'],
       mb: [3, 0],
     },
-    heading: {
-      fontSize: 3,
-      color: 'heading_secondary',
-      lineHeight: 1.4,
-      fontWeight: 700,
-      mb: [2, null, 3, 2, 3],
-      cursor: 'pointer',
-    },
-    icon: {
-      color: 'primary',
-      marginRight: '8px',
-    }
   },
 };
