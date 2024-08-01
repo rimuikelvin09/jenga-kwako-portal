@@ -176,7 +176,8 @@ export default {
       lineHeight: [1.9, null, null, 2],
       fontWeight: 'body',
       mb: 5,
-      px: [0, null, 5, 6, null, 8, 9],
+      //px: [0, null, 5, 6, null, 8, 9],
+      //px: [0, null, 4, 6, null, 8, 0],
       color: 'heading',
     },
     title: {
@@ -378,6 +379,37 @@ export default {
       },
     },
 
+    // Add keyframes for the typewriter effect
+    '@keyframes typewriter': {
+      from: { width: '0%' },
+      to: { width: '100%' },
+    },
+
+    '@keyframes blinkCaret': {
+      'from, to': { borderColor: 'transparent' },
+      '50%': { borderColor: 'currentColor' },
+    },
+
+    // Add the typewriter effect styles
+    '.typewriter': {
+      display: 'inline-block',
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      borderRight: '0.15em solid', // Blink caret effect
+      animation: 'blinkCaret 0.7s step-end infinite',
+      '&:nth-of-type(1)': {
+        width: '8ch',
+        animation: 'typewriter 2s steps(8) 1s 1 normal both, blinkCaret 0.7s step-end infinite',
+      },
+      '&:nth-of-type(2)': {
+        width: '10ch',
+        animation: 'typewriter 2s steps(10) 3s 1 normal both, blinkCaret 0.7s step-end infinite',
+      },
+      '&:nth-of-type(3)': {
+        width: '8ch',
+        animation: 'typewriter 2s steps(8) 5s 1 normal both, blinkCaret 0.7s step-end infinite',
+      },
+    },
 
     // Divider styles
     hr: {
@@ -402,4 +434,7 @@ export default {
       whiteSpace: 'nowrap !important',
     },
   },
+
+  //Typewriter effect
+
 };

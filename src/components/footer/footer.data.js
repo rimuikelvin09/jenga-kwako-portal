@@ -36,7 +36,7 @@ export default {
     ],
   },
   resources: {
-    heading: 'Downloadables',
+    heading: 'Resources',
     items: [
       {
         path: '/',
@@ -53,6 +53,10 @@ export default {
       {
         path: '/',
         label: 'Construction GPT (beta) '
+      },
+      {
+        path: '/',
+        label: 'Jenga Kwako T&C\'s '
       },
     ],
   },

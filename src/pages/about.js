@@ -115,5 +115,6 @@ const styles = {
     },
     titleContent: {
         textAlign: 'left',
+        px: [0, null, 5, 6, null, 8, 9],
     }
 };

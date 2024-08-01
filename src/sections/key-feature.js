@@ -13,33 +13,33 @@ const data = [
     id: 1,
     imgSrc: Performance,
     altText: 'Fast Performance',
-    title: 'Fast Performance',
+    title: 'Timely processes',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'We have done our best to ensure that the factors within our controll that slow down a project are streamlined, including the hectic bank processes.',
   },
   {
     id: 2,
     imgSrc: Partnership,
-    altText: 'Partnership deal',
-    title: 'Partnership deal',
+    altText: 'Value For money',
+    title: 'Value For Money',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Our strategic partnerships with manufactures and suppliers ensure that we get the best quality materials at the most reasonable prices ensuring that the client gets maximum value for their money',
   },
   {
     id: 3,
     imgSrc: Subscription,
-    altText: 'Pro Subscription',
-    title: 'Pro Subscription',
+    altText: 'Quality',
+    title: 'Quality Construction',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Be assured of Quality because firstly, our lead contrcator has been in the industry for more than 30 years & Secondly, the bank implies its quality control measures when delivering the project',
   },
   {
     id: 4,
     imgSrc: Support,
-    altText: 'Customer Support',
-    title: 'Customer Support',
+    altText: 'Customer relationship',
+    title: 'Customer Relationship',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Construction of your own house is very personal, we are intentional about fostering proper relationships with our clients in order to ensure that our clients are satisfied decades after the project is done',
   },
 ];
 
@@ -48,8 +48,8 @@ export default function KeyFeature() {
     <section sx={{ variant: 'section.keyFeature' }} id="feature">
       <Container>
         <SectionHeader
-          slogan="What's Jenga Kwako"
-          title="About this product"
+          slogan="From Financing to Finishing"
+          title="Why we stand out"
         />
 
         <Grid sx={styles.grid}>
