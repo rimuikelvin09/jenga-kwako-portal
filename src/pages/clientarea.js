@@ -89,7 +89,7 @@ export default function ClientAreaPage() {
 
                     <KeyFeature />
 
-                    <Box as="section" sx={styles.sectionWithMenu}>
+                    {/**<Box as="section" sx={styles.sectionWithMenu}>
                         <Box sx={styles.sideMenuContainer}>
                             <ClientSideMenu />
                         </Box>
@@ -98,7 +98,7 @@ export default function ClientAreaPage() {
                             <Calculator />
                             <Form />
                         </Box>
-                    </Box>
+                    </Box> */}
                 </Layout>
             </StickyProvider>
         </ThemeProvider>

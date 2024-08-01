@@ -3,9 +3,7 @@ import { jsx } from 'theme-ui';
 import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
 import BannerImg from 'assets/banner-letter.png';
 import ShapeLeft from 'assets/shape-left1.png';
-//import ShapeRight from 'assets/shape-right.png';
 import BannerBg from 'assets/bannerbg-parallax1.jpg';
-//import { transform } from 'framer-motion';
 
 export default function Banner() {
   return (
@@ -16,11 +14,6 @@ export default function Banner() {
             IT'S NOT BUSINESS,
             <Text sx={styles.redText}>IT'S PERSONAL</Text>
           </Heading>
-          {/**  <Text as="p" variant="heroSecondary" sx={styles.titleContent}>
-            We are dedicated to turning your home-ownership dreams into reality with our comprehensive A-Z building solutions.
-            Together with KMRC, who provide affordable home loans, we guide Kenyans from renting to building their dream homes.
-          </Text>
-          <Button variant="primary">Learn more 👇</Button> */}
         </Box>
         <Box sx={styles.banner.imageBox}>
           <Image src={BannerImg} alt="banner" />

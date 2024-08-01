@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import BannerBg from 'assets/aboutbannerbg.jpg';
 import Gachinga from 'assets/gachingabanner.png';
-import ShapeRight from 'assets/shape-right.png'
+import ShapeRight from 'assets/shape-right1.png'
 //import { transform } from 'framer-motion';
 import FeaturedProject from '../sections/featured-project';
 import TeamSection from '../sections/team-section';
@@ -62,7 +62,7 @@ const styles = {
         '&::before': {
             position: 'absolute',
             content: '""',
-            top: 10,
+            top: 0,
             left: 0,
             height: '100%',
             width: '100%',
@@ -70,7 +70,7 @@ const styles = {
             backgroundImage: `url(${ShapeRight})`,
             backgroundRepeat: `no-repeat`,
             backgroundPosition: 'bottom right',
-            backgroundSize: '36%',
+            backgroundSize: '40%',
         },
         '&::after': {
             position: 'absolute',
