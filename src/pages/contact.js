@@ -12,7 +12,7 @@ import TwitterFeed from 'components/socialfeed/twitterfeed';
 import FacebookFeed from 'components/socialfeed/fbfeed';
 //import Maps from '../components/maps';
 
-export default function AboutPage() {
+export default function ContactPage() {
     return (
         <ThemeProvider theme={theme}>
             <StickyProvider>

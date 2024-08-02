@@ -63,7 +63,7 @@ const styles = {
             position: 'absolute',
             content: '""',
             top: 0,
-            left: 0,
+            left: '10%',
             height: '100%',
             width: '100%',
             zIndex: -1,
