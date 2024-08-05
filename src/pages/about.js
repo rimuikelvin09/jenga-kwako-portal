@@ -12,6 +12,7 @@ import ShapeRight from 'assets/shape-right1.png'
 import FeaturedProject from '../sections/featured-project';
 import TeamSection from '../sections/team-section';
 import Otherproducts from '../sections/other-products';
+import Highlights from '../sections/highlights';
 
 export default function AboutPage() {
     return (
@@ -37,6 +38,7 @@ export default function AboutPage() {
 
                     <FeaturedProject />
                     <TeamSection />
+                    <Highlights />
                     <Otherproducts />
                 </Layout>
             </StickyProvider>
@@ -67,7 +69,7 @@ const styles = {
             height: '100%',
             width: '100%',
             zIndex: -1,
-            backgroundImage: `url(${ShapeRight})`,
+            //backgroundImage: `url(${ShapeRight})`,
             backgroundRepeat: `no-repeat`,
             backgroundPosition: 'bottom right',
             backgroundSize: '40%',
@@ -114,7 +116,7 @@ const styles = {
         textAlign: 'right'
     },
     titleContent: {
-        textAlign: 'left',
+        textAlign: 'right',
         px: [0, null, 5, 6, null, 8, 9],
     }
 };

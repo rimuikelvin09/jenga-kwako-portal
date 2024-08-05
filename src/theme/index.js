@@ -120,7 +120,11 @@ export default {
     plans: {
       pt: [8, null, 9, null, null, 10, null, '180px'],
       pb: ['90px', null, 9, null, null, 10, null, '180px'],
-    }
+    },
+    highlights: {
+      pt: [8, null, 9, null, null, 10],
+      pb: ['90px', null, 9, null, null, 10, null, '165px'],
+    },
   },
   sectionHeader: {
     width: ['100%', null, '540px'],

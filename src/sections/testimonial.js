@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Container, Heading, Text, Box, Image } from 'theme-ui';
 import SectionHeader from 'components/section-header';
-import Rating from 'components/rating';
 import ButtonGroup from 'components/button-group';
 import Carousel from 'react-multi-carousel';
 import ModalVideo from 'react-modal-video';

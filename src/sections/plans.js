@@ -140,6 +140,8 @@ const CardSection = () => {
 
 const styles = {
     container: {
+        pt: '50px',
+        pb: '50px',
         display: 'grid',
         gridTemplateColumns: ['1fr', '1fr 1fr', '1fr 1fr 1fr'],
         gap: 4,
