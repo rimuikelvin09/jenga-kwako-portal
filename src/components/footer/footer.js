@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx, Box, Grid, Container, Image, Heading, Text } from 'theme-ui';
-import { Link } from 'react-scroll';
+import Link from 'next/link';//to navigate to other pages
 import data from './footer.data';
+import menuItems from './footer.data';
 import { FaChevronRight } from 'react-icons/fa';
 
 import Jklogo from 'assets/Jengalogo.png';
@@ -9,6 +10,7 @@ import KMRClogo from 'assets/Kmrclogo.png';
 import Bbslogo from 'assets/Benchmarklogo.png';
 import Atlogo from 'assets/alphalogo.png';
 import Cmaxlogo from 'assets/cmaxlogo.png';
+import Stanbiclogo from 'assets/stanbiclogo.png';
 import Footerbg from 'assets/footerbg1.jpg';
 
 export default function Footer() {
@@ -17,19 +19,22 @@ export default function Footer() {
       {/* Partners Section */}
       <Box sx={styles.footer.partners}>
         <Grid sx={styles.footer.logos}>
-          <Link path="/">
+          <Link href="/">
             <Image src={Jklogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
           </Link>
-          <Link path="/">
+          <Link href="https://bbsltd.co.ke/">
             <Image src={Bbslogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
           </Link>
-          <Link path="/">
+          <Link href="https://www.kmrc.co.ke/">
             <Image src={KMRClogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
           </Link>
-          <Link path="/">
+          <Link href="https://www.cmax.co.ke/cmax-technology/">
             <Image src={Cmaxlogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
           </Link>
-          <Link path="/">
+          <Link href="https://www.stanbicbank.co.ke/kenya/personal/products-and-services/borrow-for-your-needs/see-all-home-loans/affordable-housing">
+            <Image src={Stanbiclogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+          </Link>
+          <Link href="https://alphainsights.co.ke/">
             <Image src={Atlogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
           </Link>
         </Grid>
@@ -44,10 +49,12 @@ export default function Footer() {
                 <Heading sx={styles.footer.heading}>{data.menuItems.heading}</Heading>
                 <nav>
                   {data.menuItems.quickLinks.map(({ path, label }, i) => (
-                    <a to={path} key={i} sx={styles.footer.link}>
-                      <FaChevronRight sx={styles.footer.icon} />
-                      {label}
-                    </a>
+                    <Link href={path} key={i} passHref>
+                      <a sx={styles.footer.link}>
+                        <FaChevronRight sx={styles.footer.icon} />
+                        {label}
+                      </a>
+                    </Link>
                   ))}
                 </nav>
               </Box>
@@ -55,10 +62,12 @@ export default function Footer() {
                 <Heading sx={styles.footer.heading}>{data.resources.heading}</Heading>
                 <nav>
                   {data.resources.items.map(({ path, label }, i) => (
-                    <a to={path} key={i} sx={styles.footer.link}>
-                      <FaChevronRight sx={styles.footer.icon} />
-                      {label}
-                    </a>
+                    <Link href={path} key={i} passHref>
+                      <a sx={styles.footer.link}>
+                        <FaChevronRight sx={styles.footer.icon} />
+                        {label}
+                      </a>
+                    </Link>
                   ))}
                 </nav>
               </Box>
@@ -116,6 +125,13 @@ const styles = {
       alignItems: 'center',
       gap: '30px',
       mb: '20px',
+      cursor: 'pointer',
+      ':last-child': {
+        mb: '0',
+      },
+      '&:hover': {
+        color: 'primary',
+      },
     },
     siteMapBg: {
       pt: '50px',

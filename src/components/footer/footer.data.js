@@ -14,23 +14,23 @@ export default {
     heading: 'Useful Links',
     quickLinks: [
       {
-        path: '/',
+        path: '/sampleplans',
         label: 'Sample plans'
       },
       {
-        path: '/',
+        path: 'https://bbsltd.co.ke/kagaa-project/',
         label: 'Ongoing Projects'
       },
       {
-        path: '/',
+        path: 'https://bbsltd.co.ke/gallery/',
         label: 'Featured Projects'
       },
       {
-        path: '/',
+        path: 'https://bbsltd.co.ke/diaspora-building-solutions/',
         label: 'Diaspora Building Solutions'
       },
       {
-        path: '/',
+        path: 'https://bbsltd.co.ke/building-consultancy/',
         label: 'Construction Consultancy Services'
       },
     ],

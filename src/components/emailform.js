@@ -5,12 +5,10 @@ import { jsx } from 'theme-ui';
 import { Container, Flex, Box, Button, Input, Text, Heading, Textarea } from 'theme-ui';
 
 export default function ContactForm() {
-  // References for input fields
   const nameInputEl = useRef(null);
   const emailInputEl = useRef(null);
   const messageInputEl = useRef(null);
 
-  // State for handling form submission status
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -141,7 +139,6 @@ const styles = {
     textAlign: 'left',
     borderRadius: 10,
     py: ['60px', null, 8],
-    // mt: '100px' // the margin on top to prevent it from touching the navbar
   },
   contentBoxInner: {
     width: ['100%', null, '540px', '600px'],
