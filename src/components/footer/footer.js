@@ -1,16 +1,17 @@
 /** @jsx jsx */
 import { jsx, Box, Grid, Container, Image, Heading, Text } from 'theme-ui';
-import Link from 'next/link';//to navigate to other pages
+import Link from 'next/link'; // to navigate to other pages
 import data from './footer.data';
 import menuItems from './footer.data';
 import { FaChevronRight } from 'react-icons/fa';
 
-import Jklogo from 'assets/Jengalogo.png';
 import KMRClogo from 'assets/Kmrclogo.png';
 import Bbslogo from 'assets/Benchmarklogo.png';
 import Atlogo from 'assets/alphalogo.png';
 import Cmaxlogo from 'assets/cmaxlogo.png';
 import Stanbiclogo from 'assets/stanbiclogo.png';
+import Kpra from 'assets/kpra.png';
+import Nca from 'assets/NCA.png';
 import Footerbg from 'assets/footerbg1.jpg';
 
 export default function Footer() {
@@ -19,9 +20,6 @@ export default function Footer() {
       {/* Partners Section */}
       <Box sx={styles.footer.partners}>
         <Grid sx={styles.footer.logos}>
-          <Link href="/">
-            <Image src={Jklogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
-          </Link>
           <Link href="https://bbsltd.co.ke/">
             <Image src={Bbslogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
           </Link>
@@ -40,11 +38,45 @@ export default function Footer() {
         </Grid>
       </Box>
 
+      {/* Site Map and Social Media Section */}
       <Box sx={styles.footer.siteMapBg}>
         <Container sx={styles.footer.siteMapContainer}>
-          {/* Site-Map Section */}
           <Box sx={styles.footer.siteMap}>
             <Grid sx={styles.footer.siteMapGrid}>
+              {/* Social Media and Accreditations Column */}
+              <Box>
+                <Heading sx={styles.footer.heading}>{data.socialMedia.heading}</Heading>
+                <nav sx={styles.footer.socialLinks}>
+                  <Grid sx={styles.footer.socialGrid}>
+                    {data.socialMedia.links.map(({ path, icon: IconComponent }, i) => (
+                      <Box as="span" key={i}>
+                        <a sx={styles.footer.socialIcon} href={path} target="_blank" rel="noopener noreferrer">
+                          <IconComponent />
+                        </a>
+                      </Box>
+                    ))}
+                  </Grid>
+                </nav>
+
+                {/* Accreditations */}
+                <Box sx={styles.footer.accreditations}>
+                  <Heading sx={styles.footer.heading}>Accreditations</Heading>
+                  <Grid sx={styles.footer.accreditationGrid}>
+                    <Image
+                      src={Kpra}
+                      style={{
+                        width: '170px',
+                        height: 'auto',
+                        filter: 'brightness(1.8)'
+                      }}
+                      alt="Kpra Logo"
+                    />
+                    <Image src={Nca} style={{ width: '70px', height: 'auto' }} alt="NCA Logo" />
+                  </Grid>
+                </Box>
+              </Box>
+
+              {/* Other Footer Sections */}
               <Box>
                 <Heading sx={styles.footer.heading}>{data.menuItems.heading}</Heading>
                 <nav>
@@ -81,20 +113,6 @@ export default function Footer() {
                     </Box>
                   ))}
                 </Box>
-              </Box>
-              <Box>
-                <Heading sx={styles.footer.heading}>{data.socialMedia.heading}</Heading>
-                <nav sx={styles.footer.socialLinks}>
-                  <Grid sx={styles.footer.socialGrid}>
-                    {data.socialMedia.links.map(({ path, icon: IconComponent }, i) => (
-                      <Box as="span" key={i}>
-                        <a sx={styles.footer.socialIcon} href={path} target="_blank" rel="noopener noreferrer">
-                          <IconComponent />
-                        </a>
-                      </Box>
-                    ))}
-                  </Grid>
-                </nav>
               </Box>
             </Grid>
           </Box>
@@ -139,7 +157,7 @@ const styles = {
       background: `url(${Footerbg}) no-repeat center center`,
       backgroundSize: 'cover',
       position: 'relative',
-      width: '100%', // Span the full width of the viewport
+      width: '100%',
       '::before': {
         content: '""',
         position: 'absolute',
@@ -147,16 +165,16 @@ const styles = {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(20, 48, 86, .96)', // Overlay color
+        backgroundColor: 'rgba(20, 48, 86, .96)',
         zIndex: 1,
       },
     },
     siteMapContainer: {
       position: 'relative',
       zIndex: 2,
-      maxWidth: '1200px', // Restrict content width
-      mx: 'auto', // Center the container
-      px: [3, 5], // Add some padding on the sides
+      maxWidth: '1200px',
+      mx: 'auto',
+      px: [3, 5],
     },
     siteMap: {
       mb: '40px',
@@ -246,13 +264,24 @@ const styles = {
       marginRight: '8px',
     },
 
+    accreditations: {
+      mt: '20px',
+    },
+    accreditationGrid: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: '30px',
+      mt: '10px',
+    },
+
     copywriter: {
       borderTop: '1px solid',
       borderTopColor: 'border_color',
       pt: [6, null, 7],
       pb: ['10px', null, '30px'],
-      pl: ['10px', null, '100px'], // Padding-left changes based on breakpoints
-      pr: ['20px', null, '100px'], // Padding-right changes based on breakpoints
+      pl: ['10px', null, '100px'],
+      pr: ['20px', null, '100px'],
       textAlign: 'left',
     },
     copywriterGrid: {

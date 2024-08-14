@@ -54,78 +54,78 @@ export default function ContactForm() {
   };
 
   return (
-    <section>
-      <Container>
-        <Box sx={styles.contentBox}>
-          <Box sx={styles.contentBoxInner}>
-            <Heading as="h2" sx={styles.title}>
-              Email Us
-            </Heading>
-            <Text as="p" sx={styles.description}>
-              Feel free to reach out to us with any inquiries or feedback. We will be happy to respond
-            </Text>
-            <form onSubmit={submitForm}>
-              <Flex sx={styles.form}>
-                <label htmlFor="name" sx={{ variant: 'styles.srOnly' }}>
-                  Name
-                </label>
-                <Input
-                  ref={nameInputEl}
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Name *"
-                  required
-                />
-                <label htmlFor="email" sx={{ variant: 'styles.srOnly' }}>
-                  Email Address
-                </label>
-                <Input
-                  ref={emailInputEl}
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Email Address *"
-                  required
-                />
-                <label htmlFor="message" sx={{ variant: 'styles.srOnly' }}>
-                  Message
-                </label>
-                <Textarea
-                  ref={messageInputEl}
-                  id="message"
-                  name="message"
-                  placeholder="Your Message"
-                  required
-                  rows={4}
-                />
-                <div>
-                  {status.info.error && (
-                    <div className="error">Error: {status.info.msg}</div>
-                  )}
-                  {!status.info.error && status.info.msg && (
-                    <div className="success">{status.info.msg}</div>
-                  )}
-                </div>
-              </Flex>
-              <Button
-                sx={styles.submitButton}
-                type="submit"
-                disabled={status.submitting}
-                className="form__btn"
-                aria-label="Submit"
-              >
-                {!status.submitting
-                  ? !status.submitted
-                    ? 'Submit'
-                    : 'Submitted'
-                  : 'Submitting...'}
-              </Button>
-            </form>
-          </Box>
-        </Box>
-      </Container>
-    </section>
+
+
+    <Box sx={styles.contentBox}>
+      <Box sx={styles.contentBoxInner}>
+        <Heading as="h2" sx={styles.title}>
+          Email Us
+        </Heading>
+        <Text as="p" sx={styles.description}>
+          Feel free to reach out to us with any inquiries or feedback. We will be happy to respond
+        </Text>
+        <form onSubmit={submitForm}>
+          <Flex sx={styles.form}>
+            <label htmlFor="name" sx={{ variant: 'styles.srOnly' }}>
+              Name
+            </label>
+            <Input
+              ref={nameInputEl}
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Name *"
+              required
+            />
+            <label htmlFor="email" sx={{ variant: 'styles.srOnly' }}>
+              Email Address
+            </label>
+            <Input
+              ref={emailInputEl}
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email Address *"
+              required
+            />
+            <label htmlFor="message" sx={{ variant: 'styles.srOnly' }}>
+              Message
+            </label>
+            <Textarea
+              ref={messageInputEl}
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              required
+              rows={4}
+            />
+            <div>
+              {status.info.error && (
+                <div className="error">Error: {status.info.msg}</div>
+              )}
+              {!status.info.error && status.info.msg && (
+                <div className="success">{status.info.msg}</div>
+              )}
+            </div>
+          </Flex>
+          <Button
+            sx={styles.submitButton}
+            type="submit"
+            disabled={status.submitting}
+            className="form__btn"
+            aria-label="Submit"
+          >
+            {!status.submitting
+              ? !status.submitted
+                ? 'Submit'
+                : 'Submitted'
+              : 'Submitting...'}
+          </Button>
+        </form>
+      </Box>
+    </Box>
+
+
   );
 }
 

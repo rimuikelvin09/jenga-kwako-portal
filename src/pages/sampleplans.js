@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import BannerBg from 'assets/aboutbannerbg.jpg';
 import Bannerimg from 'assets/samplebanner.png';
-import ShapeRight from 'assets/shape-right1.png'
+import Sampleplan from 'assets/sampleplan.png'
 
 import CardGrid from '../sections/plans';
 
@@ -23,10 +23,10 @@ export default function SamplePlans() {
                             <Box sx={styles.banner.contentBox}>
                                 <Heading as="h1" variant="heroPrimary" sx={styles.titleHeading}>
                                     BROWSE FOR PLANS
-                                    <Text sx={styles.redText}>Kuona ni bure</Text>
+                                    <Text sx={styles.redText}>KUONA NI BURE</Text>
                                 </Heading>
                                 <Text as="p" variant="heroSecondary" sx={styles.titleContent}>
-                                    “Your dream home is not just a destination; it’s the adventure of a lifetime.
+                                    “Why settle for just dreaming about your perfect home when you can start measuring the curtains? At Jenga Kwako, we’re all about turning those late-night Pinterest boards into actual, brick-and-mortar reality. So, stop fantasizing and start planning—we’re here to make sure your dream home isn’t just in your head, but right under your feet!".
                                 </Text>
                             </Box>
                         </Container>
@@ -50,26 +50,30 @@ const styles = {
         position: 'relative',
         mb: 6,
         zIndex: 2,
-        overflow: 'hidden', // Ensure content does not overflow the section
-        background: 'radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(240, 100%, 96%, 1) 100%);', // Gradient overlay 
-        backgroundSize: 'cover', // Cover the entire area
-        backgroundPosition: 'center', // Center the background image
+        overflow: 'hidden',
+        background: 'radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(240, 100%, 96%, 1) 100%);',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         '@media screen and (max-width: 768px)': {
             height: 'auto',  // Hide the image on mobile devices
         },
-        /* '&::before': {
-             position: 'absolute',
-             content: '""',
-             top: 0,
-             left: '10%',
-             height: '100%',
-             width: '100%',
-             zIndex: -1,
-             backgroundImage: `url(${ShapeRight})`,
-             backgroundRepeat: `no-repeat`,
-             backgroundPosition: 'bottom right',
-             backgroundSize: '40%',
-    },*/
+        '&::before': {
+            position: 'absolute',
+            content: '""',
+            top: 0,
+            left: '5%',
+            height: '100%',
+            width: '100%',
+            zIndex: -1,
+            backgroundImage: `url(${Sampleplan})`,
+            backgroundRepeat: `no-repeat`,
+            backgroundPosition: 'bottom right',
+            backgroundSize: '45%',
+            '@media screen and (max-width: 768px)': {
+                display: 'none',  // Hide the image on mobile devices
+            },
+
+        },
         '&::after': {
             position: 'absolute',
             content: '""',
@@ -112,7 +116,7 @@ const styles = {
         textAlign: 'left'
     },
     titleContent: {
-        textAlign: 'left',
+        textAlign: ['left', null, 'right'],
         px: [0, null, 5, 6, null, 8, 9],
     }
 };

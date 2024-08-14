@@ -312,6 +312,7 @@ export default {
         mr: 2,
       },
     },
+
   },
   cards: {
     primary: {

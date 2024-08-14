@@ -1,21 +1,32 @@
-/** @jsx jsx */
 import React, { useEffect } from 'react';
 import { jsx } from 'theme-ui';
 
 const FacebookFeed = () => {
     useEffect(() => {
-        // Load the Facebook SDK
-        const script = document.createElement('script');
-        script.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v20.0';
-        script.async = true;
-        script.defer = true;
-        script.crossOrigin = 'anonymous';
-        script.nonce = 'IuDCVoPJ'; // Your nonce value
-        document.body.appendChild(script);
+        // Load the Facebook SDK if it hasn't been loaded already
+        if (!window.FB) {
+            const script = document.createElement('script');
+            script.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v20.0';
+            script.async = true;
+            script.defer = true;
+            script.crossOrigin = 'anonymous';
+            script.nonce = 'IuDCVoPJ'; // Your nonce value
+            document.body.appendChild(script);
 
-        return () => {
-            document.body.removeChild(script);
-        };
+            script.onload = () => {
+                // Initialize the Facebook SDK after it's loaded
+                if (window.FB) {
+                    window.FB.XFBML.parse();
+                }
+            };
+
+            return () => {
+                document.body.removeChild(script);
+            };
+        } else {
+            // If the SDK is already loaded, force reparse
+            window.FB.XFBML.parse();
+        }
     }, []);
 
     return (

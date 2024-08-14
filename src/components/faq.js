@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { useState } from 'react';
-import { jsx, Box, Heading, Text } from 'theme-ui';
+import { jsx, Box, Heading, Text, Container } from 'theme-ui';
 
 const faqData = {
     title: "FAQ's (Frequently Asked Questions)",
@@ -58,11 +58,13 @@ const FAQComponent = () => {
     };
 
     return (
+
         <Box sx={styles.faqSection}>
-            <Heading as="h2" sx={styles.title}>
-                {faqData.title}
-            </Heading>
             <Box sx={styles.faqContent}>
+                <Heading as="h2" sx={styles.title}>
+                    {faqData.title}
+                </Heading>
+
                 {faqData.content.map((item) => (
                     <Box key={item.id} sx={styles.faqItem}>
                         <Box sx={styles.question} onClick={() => handleToggle(item.id)}>
@@ -84,12 +86,14 @@ const FAQComponent = () => {
                 ))}
             </Box>
         </Box>
+
     );
 };
 
 const styles = {
     faqSection: {
         p: 4,
+        py: ['60px', null, 8],
         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
         borderRadius: 10,
     },
@@ -102,6 +106,10 @@ const styles = {
     faqContent: {
         display: 'flex',
         flexDirection: 'column',
+        width: ['100%', null, '540px', '600px'],
+        mx: 'auto',
+        mt: -1,
+        px: [3, 5],
     },
     faqItem: {
         mb: 3,
