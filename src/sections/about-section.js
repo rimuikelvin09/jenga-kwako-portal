@@ -70,9 +70,9 @@ export default function aboutSection() {
             <Image src={shapePattern} alt="Shape" />
           </Box>
         </Box>
+
         <Box sx={styles.contentBox}>
           <TextFeature subTitle={data.subTitle} title={data.title} />
-
           <Grid sx={styles.grid}>
             {data.features.map((item) => (
               <Box sx={styles.card} key={item.id}>

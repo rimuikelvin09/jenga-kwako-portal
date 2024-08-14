@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui';
 import { Container, Grid, Box, Heading, Text } from 'theme-ui';
 import SectionHeader from 'components/section-header';
-
+import RegisterButton from 'components/signupform/RegisterButton';
 import PatternBG from 'assets/patternBG.png';
 import ArrowOdd from 'assets/arrowOdd.svg';
 import ArrowEven from 'assets/arrowEven.svg';
@@ -55,6 +55,12 @@ export default function Process() {
             </Box>
           ))}
         </Grid>
+
+        <Box sx={styles.buttonWrapper}>
+          <Box sx={styles.buttonContainer}>
+            <RegisterButton />
+          </Box>
+        </Box>
       </Container>
     </section>
   );
@@ -160,6 +166,51 @@ const styles = {
       color: 'white',
       opacity: 0.75,
       pr: [0, null, null, null, null, 5],
+    },
+  },
+  buttonWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    mt: 5,
+    position: 'relative',
+  },
+  buttonContainer: {
+    position: 'relative',
+    width: '220px',
+    height: '220px',
+    borderRadius: '50%',
+    backgroundColor: 'white',
+    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden', // Ensure pulse effect stays outside
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      top: '-50%',
+      left: '50%',
+      width: '300%',
+      height: '300%',
+      background: 'rgba(20, 48, 86, 1)', // Blue pulse color
+      borderRadius: '50%',
+      transform: 'scale(0)',
+      animation: 'pulse 2.5s infinite',
+      zIndex: 0,
+    },
+  },
+  '@keyframes pulse': {
+    '0%': {
+      transform: 'translate(-50%, -50%) scale(0)',
+      opacity: 1,
+    },
+    '50%': {
+      transform: 'translate(-50%, -50%) scale(1)',
+      opacity: 0,
+    },
+    '100%': {
+      transform: 'translate(-50%, -50%) scale(0)',
+      opacity: 1,
     },
   },
 };

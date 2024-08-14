@@ -1,54 +1,105 @@
-import Chat from 'assets/widget/chat.svg';
-import Community from 'assets/widget/community.svg';
-import Github from 'assets/widget/github.svg';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaYoutube,
+  FaInstagram,
+  FaLinkedinIn,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from 'react-icons/fa';
 
 export default {
-  /*widgets: [
-    {
-      id: 1,
-      iconSrc: Chat,
-      altText: 'Community',
-      title: 'Join the Community',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor.',
-    },
-    {
-      id: 2,
-      iconSrc: Community,
-      altText: 'Chat',
-      title: 'Chat Communication',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor.',
-    },
-    {
-      id: 3,
-      iconSrc: Github,
-      altText: 'Github',
-      title: 'Github Access',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor.',
-    },
-  ],*/
-  menuItem: [
-    {
-      path: '/',
-      label: 'Home',
-    },
-    {
-      path: '/',
-      label: 'About',
-    },
-    {
-      path: '/',
-      label: 'How it works',
-    },
-    {
-      path: '/',
-      label: 'Testimonials',
-    },
-    {
-      path: 'https://bbsltd.co.ke/contact-us/',
-      label: 'Contact',
-    },
-  ],
+  menuItems: {
+    heading: 'Useful Links',
+    quickLinks: [
+      {
+        path: '/sampleplans',
+        label: 'Sample plans'
+      },
+      {
+        path: 'https://bbsltd.co.ke/kagaa-project/',
+        label: 'Ongoing Projects'
+      },
+      {
+        path: 'https://bbsltd.co.ke/gallery/',
+        label: 'Featured Projects'
+      },
+      {
+        path: 'https://bbsltd.co.ke/diaspora-building-solutions/',
+        label: 'Diaspora Building Solutions'
+      },
+      {
+        path: 'https://bbsltd.co.ke/building-consultancy/',
+        label: 'Construction Consultancy Services'
+      },
+    ],
+  },
+  resources: {
+    heading: 'Resources',
+    items: [
+      {
+        path: '/',
+        label: 'Ammortization Table'
+      },
+      {
+        path: '/',
+        label: 'Requirements checklist'
+      },
+      {
+        path: '/',
+        label: 'KMRC Annual Reports'
+      },
+      {
+        path: '/',
+        label: 'Construction GPT (beta) '
+      },
+      {
+        path: '/',
+        label: 'Jenga Kwako T&C\'s '
+      },
+    ],
+  },
+  getInTouch: {
+    heading: 'Get In Touch',
+    details: [
+      {
+        icon: FaEnvelope,
+        info: 'info@bbsltd.co.ke'
+      },
+      {
+        icon: FaPhone,
+        info: '+254 722 333 324'
+      },
+      {
+        icon: FaMapMarkerAlt,
+        info: 'Mapa House, Basement, Biashara street, Kiambu Town'
+      },
+    ],
+  },
+  socialMedia: {
+    heading: 'Social Media',
+    links: [
+      {
+        path: 'https://www.instagram.com/jengakwako_ke/',
+        icon: FaInstagram
+      },
+      {
+        path: 'https://www.facebook.com/bbsltdke/',
+        icon: FaFacebookF
+      },
+      {
+        path: 'https://x.com/BenchmarkBuild4',
+        icon: FaTwitter
+      },
+      {
+        path: 'https://www.youtube.com/@bbsltd_ke',
+        icon: FaYoutube
+      },
+      {
+        path: 'https://www.linkedin.com/company/benchmark-building-solutions-ltd/',
+        icon: FaLinkedinIn
+      },
+    ],
+  },
 };

@@ -16,7 +16,7 @@ export default [
     label: 'EPS Technology',
   },
   {
-    path: '/',
+    path: '/sampleplans',
     label: 'Sample Plans',
   },
   {

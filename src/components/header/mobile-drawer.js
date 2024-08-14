@@ -4,8 +4,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import Drawer from 'components/drawer';
 import { DrawerContext } from '../../contexts/drawer/drawer.context';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
-import { Link } from 'react-scroll';
-//import Link from 'next/link';
+import Link from 'next/link';
 import {
   FaFacebookF,
   FaTwitter,
@@ -48,6 +47,13 @@ const MobileDrawer = () => {
     });
   }, [dispatch]);
 
+  // Close drawer when a menu item is clicked
+  const handleLinkClick = React.useCallback(() => {
+    dispatch({
+      type: 'TOGGLE',
+    });
+  }, [dispatch]);
+
   return (
     <Drawer
       width="320px"
@@ -59,23 +65,17 @@ const MobileDrawer = () => {
       open={state.isOpen}
       toggleHandler={toggleHandler}
       closeButton={<IoMdClose size="24px" color="#000000" />}
-      drawerStyle={styles.drawer}
+      drawerStyle={styles.drawer(state.isOpen)} // Pass isOpen to drawerStyle
       closeBtnStyle={styles.close}
     >
       <Scrollbars autoHide>
         <Box sx={styles.content}>
           <Box sx={styles.menu}>
             {menuItems.map(({ path, label }, i) => (
-              <Link
-                activeClass="active"
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
-              >
-                {label}
+              <Link href={path} key={i} passHref legacyBehavior>
+                <a sx={styles.navLink} onClick={handleLinkClick}>
+                  {label}
+                </a>
               </Link>
             ))}
           </Box>
@@ -84,7 +84,11 @@ const MobileDrawer = () => {
             <Box sx={styles.social}>
               {social.map(({ path, icon }, i) => (
                 <Box as="span" key={i} sx={styles.social.icon}>
-                  <Link to={path}>{icon}</Link>
+                  <Link href={path} passHref legacyBehavior>
+                    <a target="_blank" rel="noopener noreferrer">
+                      {icon}
+                    </a>
+                  </Link>
                 </Box>
               ))}
             </Box>
@@ -96,6 +100,22 @@ const MobileDrawer = () => {
 };
 
 const styles = {
+  navLink: {
+    textDecoration: 'none',
+    color: 'text',
+    fontSize: 2,
+    fontWeight: 'heading',
+    px: 5,
+    cursor: 'pointer',
+    lineHeight: '1.2',
+    transition: 'all 0.15s',
+    '&:hover': {
+      color: 'primary',
+    },
+    '&.active': {
+      color: 'primary',
+    },
+  },
   handler: {
     display: 'flex',
     alignItems: 'center',
@@ -108,11 +128,18 @@ const styles = {
     },
   },
 
-  drawer: {
+  // Modify the drawer style to apply the animation
+  drawer: (isOpen) => ({
     width: '100%',
     height: '100%',
     backgroundColor: 'dark',
-  },
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
+    transition: 'transform 0.3s ease-in-out', // Smooth slide transition
+    zIndex: 1000, // Ensure the drawer is above other elements
+  }),
 
   close: {
     display: 'flex',
