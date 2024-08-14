@@ -135,6 +135,7 @@ export default function Footer() {
 const styles = {
   footer: {
     partners: {
+      mt: '100px',
       mb: '100px',
     },
     logos: {
