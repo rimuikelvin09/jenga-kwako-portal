@@ -2,55 +2,56 @@
 import { useRef, useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import { jsx } from 'theme-ui';
-import { Container, Flex, Box, Button, Input, Text, Heading, Textarea } from 'theme-ui';
+import {
+  Container, Flex, Box, Button, Input, Text, Heading,
+  Textarea
+} from 'theme-ui';
+import axios from 'axios';
 
 export default function ContactForm() {
   const nameInputEl = useRef(null);
   const emailInputEl = useRef(null);
   const messageInputEl = useRef(null);
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
-    info: { error: false, msg: null },
+
+    error: null,
   });
 
-  const handleResponse = (status, msg) => {
-    if (status === 200) {
-      setStatus({
-        submitted: true,
-        submitting: false,
-        info: { error: false, msg: msg },
-      });
-      nameInputEl.current.value = '';
-      emailInputEl.current.value = '';
-      messageInputEl.current.value = '';
-    } else {
-      setStatus({
-        info: { error: true, msg: msg },
-      });
-    }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const submitForm = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
-
-    // Send request to the API with name, email, and message
-    const res = await fetch('/api/contact', {
-      body: JSON.stringify({
-        name: nameInputEl.current.value,
-        email: emailInputEl.current.value,
-        message: messageInputEl.current.value,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
+    setStatus({
+      ...status,
+      submitting: true
     });
 
-    const text = await res.text();
-    handleResponse(res.status, text);
+    try {
+      const res = await axios.post('/api/contact', formData, {
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      if (res.status === 200) {
+        setStatus({
+          submitted: true, submitting: false, error: null
+        });
+      } else {
+        setStatus({ submitted: false, submitting: false, error: 'Oops! an error occured' });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus({ submitted: false, submitting: false, error: 'Oops! an error occured' });
+    }
   };
 
   return (
@@ -64,18 +65,20 @@ export default function ContactForm() {
         <Text as="p" sx={styles.description}>
           Feel free to reach out to us with any inquiries or feedback. We will be happy to respond
         </Text>
-        <form onSubmit={submitForm}>
+        <form onSubmit={handleSubmit}>
           <Flex sx={styles.form}>
             <label htmlFor="name" sx={{ variant: 'styles.srOnly' }}>
-              Name
+              Full Name
             </label>
             <Input
               ref={nameInputEl}
               id="name"
               name="name"
               type="text"
-              placeholder="Name *"
+              placeholder="Your Name *"
               required
+              value={formData.name}
+              onChange={handleChange}
             />
             <label htmlFor="email" sx={{ variant: 'styles.srOnly' }}>
               Email Address
@@ -85,8 +88,10 @@ export default function ContactForm() {
               id="email"
               name="email"
               type="email"
-              placeholder="Email Address *"
+              placeholder="yourmail@example.com *"
               required
+              value={formData.email}
+              onChange={handleChange}
             />
             <label htmlFor="message" sx={{ variant: 'styles.srOnly' }}>
               Message
@@ -97,17 +102,14 @@ export default function ContactForm() {
               name="message"
               placeholder="Your Message"
               required
+              value={formData.message}
+              onChange={handleChange}
               rows={4}
             />
-            <div>
-              {status.info.error && (
-                <div className="error">Error: {status.info.msg}</div>
-              )}
-              {!status.info.error && status.info.msg && (
-                <div className="success">{status.info.msg}</div>
-              )}
-            </div>
           </Flex>
+          {status.error && <div className="error">{status.error}</div>}
+          {status.submitted && <div className="success">Message sent successfully!</div>}
+
           <Button
             sx={styles.submitButton}
             type="submit"
@@ -115,11 +117,7 @@ export default function ContactForm() {
             className="form__btn"
             aria-label="Submit"
           >
-            {!status.submitting
-              ? !status.submitted
-                ? 'Submit'
-                : 'Submitted'
-              : 'Submitting...'}
+            {status.submitting ? 'Sending...' : 'Submit'}
           </Button>
         </form>
       </Box>
