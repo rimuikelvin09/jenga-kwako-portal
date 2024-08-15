@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, Box } from 'theme-ui';
 import { ThemeProvider } from 'theme-ui';
 import { StickyProvider } from '../contexts/app/app.provider';
 import theme from '../theme';
@@ -19,16 +19,16 @@ export default function ContactPage() {
                     <SEO title="Contact Us | Jenga Kwako" />
 
                     <section sx={styles.section}>
-                        <div sx={styles.container}>
-                            <div sx={styles.leftColumn}>
+                        <Box sx={styles.container}>
+                            <Box sx={styles.leftColumn}>
                                 <FAQComponent />
                                 <Emailform />
-                            </div>
-                            <div sx={styles.rightColumn}>
+                            </Box>
+                            <Box sx={styles.rightColumn}>
                                 {/** <TwitterFeed />*/}
                                 <FacebookFeed />
-                            </div>
-                        </div>
+                            </Box>
+                        </Box>
                     </section>
                 </Layout>
             </StickyProvider>

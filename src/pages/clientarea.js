@@ -89,16 +89,16 @@ export default function ClientAreaPage() {
 
                     <KeyFeature />
 
-                    {/**<Box as="section" sx={styles.sectionWithMenu}>
-                        <Box sx={styles.sideMenuContainer}>
+                    <Box as="section" sx={styles.sectionWithMenu}>
+                        {/**  <Box sx={styles.sideMenuContainer}>
                             <ClientSideMenu />
-                        </Box>
+                        </Box> */}
                         <Box sx={styles.mainContent}>
-                            <Requirements />
+                            {/** <Requirements />                           
+                            <Form />*/}
                             <Calculator />
-                            <Form />
                         </Box>
-                    </Box> */}
+                    </Box>
                 </Layout>
             </StickyProvider>
         </ThemeProvider>
