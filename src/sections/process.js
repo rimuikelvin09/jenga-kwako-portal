@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Container, Grid, Box, Heading, Text } from 'theme-ui';
+import { jsx, Container, Grid, Box, Heading, Text } from 'theme-ui';
 import SectionHeader from 'components/section-header';
 import RegisterButton from 'components/signupform/RegisterButton';
 import PatternBG from 'assets/patternBG.png';
@@ -65,6 +64,7 @@ export default function Process() {
     </section>
   );
 }
+
 
 const styles = {
   process: {
@@ -184,33 +184,34 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    overflow: 'hidden', // Ensure pulse effect stays outside
+    overflow: 'visible', // Ensure pulse effect stays outside
     '&::after': {
       content: '""',
       position: 'absolute',
-      top: '-50%',
+      top: '10%',
       left: '50%',
-      width: '300%',
-      height: '300%',
+      width: '50%',
+      height: '50%',
       background: 'rgba(20, 48, 86, 1)', // Blue pulse color
       borderRadius: '50%',
       transform: 'scale(0)',
-      animation: 'pulse 2.5s infinite',
       zIndex: 0,
+      animation: 'pulse 2.5s infinite',
+      '@keyframes pulse': {
+        '0%': {
+          transform: 'translate(-50%, -50%) scale(0)',
+          opacity: 1,
+        },
+        '50%': {
+          transform: 'translate(-50%, -50%) scale(1)',
+          opacity: 0,
+        },
+        '100%': {
+          transform: 'translate(-50%, -50%) scale(0)',
+          opacity: 1,
+        },
+      },
     },
   },
-  '@keyframes pulse': {
-    '0%': {
-      transform: 'translate(-50%, -50%) scale(0)',
-      opacity: 1,
-    },
-    '50%': {
-      transform: 'translate(-50%, -50%) scale(1)',
-      opacity: 0,
-    },
-    '100%': {
-      transform: 'translate(-50%, -50%) scale(0)',
-      opacity: 1,
-    },
-  },
+
 };
