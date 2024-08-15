@@ -94,9 +94,9 @@ export default function ClientAreaPage() {
                             <ClientSideMenu />
                         </Box> */}
                         <Box sx={styles.mainContent}>
-                            {/** <Requirements />                           
-                            <Form />*/}
+                            {/** <Form />*/}
                             <Calculator />
+                            <Requirements />
                         </Box>
                     </Box>
                 </Layout>
