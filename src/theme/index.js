@@ -141,6 +141,7 @@ export default {
       textAlign: 'center',
       fontWeight: '700',
       letterSpacing: '-.5px',
+      textTransform: 'uppercase',
     },
 
     subTitle: {

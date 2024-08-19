@@ -12,7 +12,7 @@ export default [
     label: 'Client Area',
   },
   {
-    path: '/',
+    path: '/epstechnology',
     label: 'EPS Technology',
   },
   {

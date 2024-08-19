@@ -125,7 +125,9 @@ export default function Footer() {
           <Text sx={styles.footer.copyright}>
             ©️ {new Date().getFullYear()} Benchmark Building Solutions Ltd🔴
           </Text>
-          <Text>Powered by AlphatechInsights</Text>
+          <Text>Powered by
+            <Link href={'https://alphainsights.co.ke/'}> AlphatechInsights</Link>
+          </Text>
         </Grid>
       </Box>
     </footer>
