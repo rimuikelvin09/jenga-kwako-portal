@@ -45,6 +45,7 @@
     "webpack-cli": "^5.1.4"
   },
   "devDependencies": {
+    "file-loader": "^6.2.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",

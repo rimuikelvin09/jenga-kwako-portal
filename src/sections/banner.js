@@ -45,7 +45,6 @@ const styles = {
       height: '100%',
       width: '100%',
       zIndex: -1,
-      //backgroundImage: `url(${BannerImg})`,
       backgroundImage: `url(${Homebanner})`,
       backgroundRepeat: `no-repeat`,
       backgroundPosition: 'bottom right',

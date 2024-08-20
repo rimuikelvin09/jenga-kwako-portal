@@ -1,9 +1,12 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui';
 
-export default function PreLoader() {
+export default function PreLoader({ isExiting }) {
     return (
-        <Box sx={styles.loaderContainer}>
+        <Box
+            sx={styles.loaderContainer}
+            className={isExiting ? 'slide-up' : ''}
+        >
             <Box sx={styles.spinner}></Box>
         </Box>
     );
@@ -21,6 +24,11 @@ const styles = {
         height: '100%',
         backgroundColor: 'rgba(255, 255, 255, 1)',
         zIndex: 9999,
+        transition: 'transform 0.8s ease, opacity 0.8s ease',
+        '&.slide-up': {
+            transform: 'translateY(-100%)',
+            opacity: 1,
+        },
     },
     spinner: {
         width: '50px',

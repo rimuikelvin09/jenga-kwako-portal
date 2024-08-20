@@ -9,12 +9,12 @@ import { StickyProvider } from '../contexts/app/app.provider';
 import theme from '../theme';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import ClientSideMenu from '../components/clientsidemenu'; // Updated import
+//import ClientSideMenu from '../components/clientsidemenu'; // Updated import
 
 import KeyFeature from '../sections/key-feature';
 import Calculator from '../sections/ammortization';
 import Requirements from '../sections/requirements';
-import Form from '../sections/application-form';
+import RegisterButton from 'components/signupform/RegisterButton';
 
 import Clientbg from 'assets/clientbanner.png';
 
@@ -89,14 +89,15 @@ export default function ClientAreaPage() {
 
                     <KeyFeature />
 
-                    <Box as="section" sx={styles.sectionWithMenu}>
-                        {/**  <Box sx={styles.sideMenuContainer}>
-                            <ClientSideMenu />
-                        </Box> */}
-                        <Box sx={styles.mainContent}>
-                            {/** <Form />*/}
-                            <Calculator />
-                            <Requirements />
+
+                    <Box sx={styles.mainContent}>
+                        <Calculator />
+                        <Requirements />
+                    </Box>
+
+                    <Box sx={styles.buttonWrapper}>
+                        <Box sx={styles.buttonContainer}>
+                            <RegisterButton />
                         </Box>
                     </Box>
                 </Layout>
@@ -180,6 +181,37 @@ const styles = {
     titleContent: {
         mt: '10px',
         px: [0, null, 4, 6, null, 8, 0],
+    },
+
+    buttonWrapper: {
+        display: 'flex',
+        justifyContent: 'center',
+        mt: 5,
+        position: 'relative',
+    },
+    buttonContainer: {
+        position: 'relative',
+        width: '220px',
+        height: '220px',
+        borderRadius: '50%',
+        backgroundColor: 'white',
+        boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        overflow: 'visible', // Ensure pulse effect stays outside
+        '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: '10%',
+            left: '50%',
+            width: '50%',
+            height: '50%',
+            background: 'rgba(20, 48, 86, 1)', // Blue pulse color
+            borderRadius: '50%',
+            transform: 'scale(0)',
+            zIndex: 1,
+        },
     },
 
 }

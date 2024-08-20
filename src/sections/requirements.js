@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui';
 import { Container, Grid, Box, Heading, Text, Link } from 'theme-ui';
 import SectionHeader from 'components/section-header';
+import { FaFileDownload } from 'react-icons/fa';
 
 const requirementsData = [
     {
@@ -54,13 +55,45 @@ export default function Requirements() {
                         </Heading>
                         <ul sx={styles.downloadList}>
                             <li>
-                                <Link href="/downloads/requirements-checklist.pdf" download>Requirements Checklist</Link>
+                                <a
+                                    sx={styles.navLink}
+                                    href="/downloadables/JK-Requirements-Checklist.pdf"
+                                    download
+                                >
+                                    <FaFileDownload />.
+                                    Requirements Checklist
+                                </a>
+
                             </li>
                             <li>
-                                <Link href="/downloads/amortization-table.pdf" download>Amortization Table</Link>
+                                <a
+                                    sx={styles.navLink}
+                                    href="/downloadables/JK-ammortization-table.pdf"
+                                    download
+                                >
+                                    <FaFileDownload />.
+                                    Amortization Table
+                                </a>
                             </li>
                             <li>
-                                <Link href="/downloads/jenga-kwako-tc.pdf" download>Jenga Kwako T & C's</Link>
+                                <a
+                                    sx={styles.navLink}
+                                    href="/downloadables/JK-terms.pdf"
+                                    download
+                                >
+                                    <FaFileDownload />.
+                                    Jenga Kwako T & C's
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    sx={styles.navLink}
+                                    href="/downloadables/KMRC-Annual-Report-2023.pdf"
+                                    download
+                                >
+                                    <FaFileDownload />.
+                                    KMRC annual report 2023
+                                </a>
                             </li>
                         </ul>
                     </Box>
@@ -114,6 +147,22 @@ const styles = {
         paddingLeft: '0',
         '& li': {
             marginBottom: '10px',
+        },
+    },
+    navLink: {
+        textDecoration: 'none',
+        color: 'text',
+        fontSize: 2,
+        fontWeight: 'heading',
+        px: 5,
+        cursor: 'pointer',
+        lineHeight: '1.2',
+        transition: 'all 0.15s',
+        '&:hover': {
+            color: 'primary',
+        },
+        '&.active': {
+            color: 'primary',
         },
     },
 };

@@ -25,7 +25,7 @@ const styles = {
     alignItems: ['center', 'flex-start'],
     flexDirection: 'column',
     mb: -1,
-    textAlign: ['center', null, 'left'],
+    textAlign: ['left', null, 'left'],
     px: [4, null, 0],
   },
   img: {

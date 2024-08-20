@@ -39,15 +39,15 @@ export default {
     heading: 'Resources',
     items: [
       {
-        path: '/',
+        path: '/downloadables/JK-ammortization-table.pdf',
         label: 'Ammortization Table'
       },
       {
-        path: '/',
+        path: '/downloadables/JK-Requirements-Checklist.pdf',
         label: 'Requirements checklist'
       },
       {
-        path: '/',
+        path: '/downloadables/KMRC-Annual-Report-2023.pdf',
         label: 'KMRC Annual Reports'
       },
       {
@@ -55,7 +55,7 @@ export default {
         label: 'Construction GPT (beta) '
       },
       {
-        path: '/',
+        path: '/downloadables/JK-terms.pdf',
         label: 'Jenga Kwako T&C\'s '
       },
     ],

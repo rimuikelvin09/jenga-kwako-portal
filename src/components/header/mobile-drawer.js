@@ -122,7 +122,6 @@ const styles = {
     justifyContent: 'center',
     flexShrink: '0',
     width: '26px',
-
     '@media screen and (min-width: 1024px)': {
       display: 'none',
     },
@@ -166,13 +165,15 @@ const styles = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
+    overflow: 'hidden',
     a: {
+      textDecoration: 'none',
       fontSize: '16px',
       fontWeight: '500',
-      color: 'text_white',
+      color: 'text',
       py: '15px',
       cursor: 'pointer',
-      borderBottom: '1px solid #e8e5e5',
+      // borderBottom: '1px solid #e8e5e5',
       transition: 'all 0.25s',
       '&:hover': {
         color: 'secondary',
@@ -198,6 +199,7 @@ const styles = {
     justifyContent: 'center',
 
     icon: {
+      textDecoration: 'none',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',

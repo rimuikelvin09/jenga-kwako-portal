@@ -102,7 +102,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     position: 'relative',
-    textAlign: ['center', null, 'left'],
+    textAlign: ['left', null, 'left'],
     width: ['100%', '80%', '100%'],
     mx: ['auto'],
     px: [4, null, null, 0],
@@ -195,7 +195,7 @@ const styles = {
       background: 'rgba(20, 48, 86, 1)', // Blue pulse color
       borderRadius: '50%',
       transform: 'scale(0)',
-      zIndex: 0,
+      zIndex: 1,
       animation: 'pulse 2.5s infinite',
       '@keyframes pulse': {
         '0%': {

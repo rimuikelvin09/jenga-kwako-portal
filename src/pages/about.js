@@ -5,7 +5,7 @@ import { StickyProvider } from '../contexts/app/app.provider';
 import theme from '../theme';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import BannerBg from 'assets/aboutbannerbg.jpg';
+//import BannerBg from 'assets/aboutbannerbg.jpg';
 import Gachinga from 'assets/gachingabanner.png';
 import ShapeRight from 'assets/aboutbanner2.png'
 //import { transform } from 'framer-motion';
@@ -25,8 +25,8 @@ export default function AboutPage() {
                         <Container sx={styles.banner.container}>
                             <Box sx={styles.banner.contentBox}>
                                 <Heading as="h1" variant="heroPrimary" sx={styles.titleHeading}>
-                                    RENT YAKO INAFAA,
-                                    <Text sx={styles.redText}>KUWA KEJA YAKO.</Text>
+                                    THIS IS A
+                                    <Text sx={styles.redText}>HUSSLE-FREE ZONE !</Text>
                                 </Heading>
                                 <Text as="p" variant="heroSecondary" sx={styles.titleContent}>
                                     We are dedicated to turning your home-ownership dreams into reality with our comprehensive A-Z building solutions.
@@ -61,7 +61,7 @@ const styles = {
         '@media screen and (max-width: 768px)': {
             height: 'auto',  // Hide the image on mobile devices
         },
-        '&::before': {
+        /*'&::before': {
             position: 'absolute',
             content: '""',
             top: '30%',
@@ -72,8 +72,8 @@ const styles = {
             backgroundImage: `url(${ShapeRight})`,
             backgroundRepeat: `no-repeat`,
             backgroundPosition: 'bottom right',
-            backgroundSize: '52%',
-        },
+            backgroundSize: '50%',
+        },*/
         '&::after': {
             position: 'absolute',
             content: '""',
@@ -103,20 +103,22 @@ const styles = {
             zIndex: 1, // Bring content above the background
         },
         contentBox: {
-            width: ['100%', '90%', '535px', null, '57%', '60%', '68%', '60%'],
+            width: ['100%', '90%', '535px', null, '57%', '60%', '78%', '70%'],
             mx: 'auto',
-            textAlign: 'center',
+            textAlign: 'left',
             mb: ['40px', null, null, null, null, 7],
+            px: [0, null, 5, 6, null, 8, 9],
         },
     },
     redText: {
         color: 'primary',
     },
     titleHeading: {
-        textAlign: 'right'
+        textAlign: 'left'
     },
     titleContent: {
-        textAlign: ['right', null, 'left'], // right for mobile, left for larger screens
-        px: [0, null, 5, 6, null, 8, 9],
+        textAlign: ['left', null, 'left'],
+        //px: [0, null, 5, 6, null, 8, 9],
+        px: 0,
     }
 };

@@ -87,7 +87,7 @@ export default function BlogSection() {
       <Container>
         <SectionHeader
           slogan="Other Products"
-          title="Explore our product offerings apart from the financing option"
+          title="Get Bencmark's Product Offerings"
         />
 
         <Box sx={styles.carouselWrapper}>

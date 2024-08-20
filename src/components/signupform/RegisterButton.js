@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Button } from 'theme-ui';
+import { jsx, Button, Box } from 'theme-ui';
 import useHubSpotForm from './useHubSpotForm';
 
 const RegisterButton = ({ onClick }) => {
@@ -15,14 +15,21 @@ const RegisterButton = ({ onClick }) => {
 
     return (
         <>
-            <Button
+            {/*<Button
                 className="register__btn"
                 variant="secondary"
                 aria-label="Register Here"
                 onClick={handleClick}
             >
                 Register Here
-            </Button>
+            </Button>*/}
+            <Box
+                sx={styles.registerButton}
+                aria-label="Register Here"
+                onClick={handleClick}
+            >
+                Register Here
+            </Box>
             {isFormVisible && (
                 <div sx={styles.formOverlay}>
                     <div sx={styles.formContainer}>
@@ -68,6 +75,39 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         overflowY: 'auto',
+    },
+    registerButton: {
+        borderRadius: '45px',
+        fontSize: ['14px', null, null, 2],
+        letterSpacings: '-0.15px',
+        padding: ['12px 20px', null, '15px 30px'],
+        fontFamily: 'body',
+        cursor: 'pointer',
+        lineHeight: 1.2,
+        transition: 'all 0.25s',
+        boxShadow: 'rgba(0, 0, 0, 0.5) 0px 12px 24px -10px',
+        fontWeight: 700,
+        color: 'primary',
+        animation: 'pulse 2s infinite', // add pulse effect
+        '@keyframes pulse': {
+            '0%': {
+                boxShadow: '0 0 0 0 rgba(255, 0, 0, 0.7)', // red pulse start
+            },
+            '70%': {
+                boxShadow: '0 0 0 20px rgba(255, 0, 0, 0)', // red pulse end
+            },
+            '100%': {
+                boxShadow: '0 0 0 0 rgba(255, 0, 0, 0)', // red pulse reset
+            },
+        },
+        '& svg': {
+            color: 'white', // white play icon
+        },
+        '&:hover': {
+            color: 'white',
+            bg: 'primary',
+            boxShadow: 'rgba(0, 0, 0, 0.7) 0px 12px 24px -10px',
+        },
     },
     closeButton: {
         position: 'fixed',

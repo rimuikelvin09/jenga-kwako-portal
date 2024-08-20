@@ -11,24 +11,33 @@ import 'typeface-dm-sans';
 import PreLoader from '../components/preloader';
 
 export default function CustomApp({ Component, pageProps }) {
+  const [loading, setLoading] = useState(true);
+  const [exiting, setExiting] = useState(false);
+
   useEffect(() => {
     initGA();
     logPageView();
     Router.events.on('routeChangeComplete', logPageView);
   }, []);
 
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    const handleStart = () => setLoading(true);
-    const handleComplete = () => setLoading(false);
+    const handleStart = () => {
+      setExiting(false);
+      setLoading(true);
+    }
+
+    const handleComplete = () => {
+      setTimeout(() => {
+        setExiting(true);
+        setTimeout(() => setLoading(false), 800);
+      }, 2000);
+    };
 
     Router.events.on('routeChangeStart', handleStart);
     Router.events.on('routeChangeComplete', handleComplete);
     Router.events.on('routeChangeError', handleComplete);
 
-    initGA();
-    logPageView();
+    setTimeout(() => handleComplete(), 2000);
 
     return () => {
       Router.events.off('routeChangeStart', handleStart);
@@ -37,14 +46,14 @@ export default function CustomApp({ Component, pageProps }) {
     };
   }, []);
 
-  useEffect(() => {
+  {/* useEffect(() => {
     setLoading(false); // Disable the loader once the component mounts
-  }, []);
+  }, []);*/}
 
   return (
     <ThemeProvider theme={theme}>
       <StickyProvider>
-        {loading && <PreLoader />}
+        {loading && <PreLoader isExiting={exiting} />}
         <Component {...pageProps} />
       </StickyProvider>
     </ThemeProvider>

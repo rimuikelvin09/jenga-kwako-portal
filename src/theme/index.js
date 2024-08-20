@@ -444,7 +444,4 @@ export default {
       whiteSpace: 'nowrap !important',
     },
   },
-
-  //Typewriter effect
-
 };

@@ -2,7 +2,6 @@
 import { jsx, Box, Grid, Container, Image, Heading, Text } from 'theme-ui';
 import Link from 'next/link'; // to navigate to other pages
 import data from './footer.data';
-import menuItems from './footer.data';
 import { FaChevronRight } from 'react-icons/fa';
 
 import KMRClogo from 'assets/Kmrclogo.png';
@@ -123,10 +122,15 @@ export default function Footer() {
       <Box sx={styles.footer.copywriter}>
         <Grid sx={styles.footer.copywriterGrid}>
           <Text sx={styles.footer.copyright}>
-            ©️ {new Date().getFullYear()} Benchmark Building Solutions Ltd🔴
+            ©️ {new Date().getFullYear()} Benchmark Building Solutions Ltd
           </Text>
           <Text>Powered by
-            <Link href={'https://alphainsights.co.ke/'}> AlphatechInsights</Link>
+            <a
+              sx={styles.atLink}
+              href={'https://alphainsights.co.ke/'}
+            >
+              👉 AlphatechInsights
+            </a>
           </Text>
         </Grid>
       </Box>
@@ -298,4 +302,8 @@ const styles = {
       mb: [3, 0],
     },
   },
+  atLink: {
+    textDecoration: 'none',
+    color: 'green'
+  }
 };

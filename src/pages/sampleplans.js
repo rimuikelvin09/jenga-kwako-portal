@@ -22,8 +22,8 @@ export default function SamplePlans() {
                         <Container sx={styles.banner.container}>
                             <Box sx={styles.banner.contentBox}>
                                 <Heading as="h1" variant="heroPrimary" sx={styles.titleHeading}>
-                                    BROWSE FOR PLANS
-                                    <Text sx={styles.redText}>KUONA NI BURE</Text>
+                                    KUONA NI BURE
+                                    <Text sx={styles.redText}>KUJENGA NI STRESS-FREE</Text>
                                 </Heading>
                                 <Text as="p" variant="heroSecondary" sx={styles.titleContent}>
                                     “Why settle for just dreaming about your perfect home when you can start measuring the curtains? At Jenga Kwako, we’re all about turning those late-night Pinterest boards into actual, brick-and-mortar reality. So, stop fantasizing and start planning—we’re here to make sure your dream home isn’t just in your head, but right under your feet!".
@@ -60,39 +60,40 @@ const styles = {
         '&::before': {
             position: 'absolute',
             content: '""',
-            top: 0,
-            left: '5%',
+            top: 7,
+            left: '-60%',
             height: '100%',
             width: '100%',
             zIndex: -1,
             backgroundImage: `url(${Sampleplan})`,
             backgroundRepeat: `no-repeat`,
-            backgroundPosition: 'bottom right',
-            backgroundSize: '45%',
-            '@media screen and (max-width: 768px)': {
-                display: 'none',  // Hide the image on mobile devices
-            },
-
-        },
-        '&::after': {
-            position: 'absolute',
-            content: '""',
-            top: 10,
-            bottom: 10,
-            left: 0,
-            right: 0,
-            height: '100%',
-            width: '100%',
-            zIndex: -1,
-            backgroundImage: `url(${Bannerimg})`,
-            backgroundRepeat: `no-repeat`,
             backgroundPosition: 'bottom left',
-            backgroundSize: '36%',
+            backgroundSize: '45%',
+            transform: 'scaleX(-1)',
             '@media screen and (max-width: 768px)': {
                 display: 'none',  // Hide the image on mobile devices
             },
 
         },
+        /* '&::after': {
+             position: 'absolute',
+             content: '""',
+             top: 10,
+             bottom: 10,
+             left: 0,
+             right: 0,
+             height: '100%',
+             width: '100%',
+             zIndex: -1,
+             backgroundImage: `url(${Bannerimg})`,
+             backgroundRepeat: `no-repeat`,
+             backgroundPosition: 'bottom left',
+             backgroundSize: '36%',
+             '@media screen and (max-width: 768px)': {
+                 display: 'none',  // Hide the image on mobile devices
+             },
+ 
+         }, */
 
         container: {
             minHeight: 'inherit',
@@ -105,8 +106,9 @@ const styles = {
         contentBox: {
             width: ['100%', '90%', '535px', null, '57%', '60%', '68%', '60%'],
             mx: 'auto',
-            textAlign: 'center',
+            textAlign: 'left',
             mb: ['40px', null, null, null, null, 7],
+            px: [0, null, 5, 6, null, 8, 9],
         },
     },
     redText: {
@@ -116,7 +118,7 @@ const styles = {
         textAlign: 'left'
     },
     titleContent: {
-        textAlign: ['left', null, 'right'],
-        px: [0, null, 5, 6, null, 8, 9],
+        textAlign: ['left', null, 'left'],
+        //px: [0, null, 5, 6, null, 8, 9],
     }
 };
