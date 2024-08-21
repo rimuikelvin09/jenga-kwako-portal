@@ -23,7 +23,7 @@ export default function Header({ className }) {
             ))}
           </Flex>
 
-          <RegisterButton />
+          <RegisterButton isInHeader={true} />
 
           <MobileDrawer />
         </Container>
