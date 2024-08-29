@@ -5,10 +5,8 @@ import { StickyProvider } from '../contexts/app/app.provider';
 import theme from '../theme';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-//import BannerBg from 'assets/aboutbannerbg.jpg';
 import Gachinga from 'assets/gachingabanner.png';
-import ShapeRight from 'assets/aboutbanner2.png'
-//import { transform } from 'framer-motion';
+//import ShapeRight from 'assets/aboutbanner2.png;'
 import FeaturedProject from '../sections/featured-project';
 import TeamSection from '../sections/team-section';
 import Otherproducts from '../sections/other-products';
@@ -25,8 +23,8 @@ export default function AboutPage() {
                         <Container sx={styles.banner.container}>
                             <Box sx={styles.banner.contentBox}>
                                 <Heading as="h1" variant="heroPrimary" sx={styles.titleHeading}>
-                                    THIS IS A
-                                    <Text sx={styles.redText}>HUSSLE-FREE ZONE !</Text>
+                                    EAST OR WEST
+                                    <Text sx={styles.redText}>HOME IS BEST 🏠 </Text>
                                 </Heading>
                                 <Text as="p" variant="heroSecondary" sx={styles.titleContent}>
                                     We are dedicated to turning your home-ownership dreams into reality with our comprehensive A-Z building solutions.

@@ -13,9 +13,9 @@ const data = [
     id: 1,
     imgSrc: Performance,
     altText: 'Fast Performance',
-    title: 'Timely processes',
+    title: 'Fast processes',
     text:
-      'We have done our best to ensure that the factors within our controll that slow down a project are streamlined, including the hectic bank processes.',
+      'We\'ve laid the foundation by streamlining every process within our control—no more waiting on the bank’s tidious processes',
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const data = [
     altText: 'Value For money',
     title: 'Value For Money',
     text:
-      'Our strategic partnerships with manufactures and suppliers ensure that we get the best quality materials at the most reasonable prices ensuring that the client gets maximum value for their money',
+      'Our solid partnerships with manufacturers and suppliers mean we cement top-notch quality at the best prices—delivering maximum value for every shilling.',
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const data = [
     altText: 'Quality',
     title: 'Quality Construction',
     text:
-      'Be assured of Quality because firstly, our lead contrcator has been in the industry for more than 30 years & Secondly, the bank implies its quality control measures when delivering the project',
+      'Quality is our cornerstone—with over 30 years of experience and the bank\'s strict quality checks, you’re in solid hands.',
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const data = [
     altText: 'Customer relationship',
     title: 'Customer Relationship',
     text:
-      'Construction of your own house is very personal, we are intentional about fostering proper relationships with our clients in order to ensure that our clients are satisfied decades after the project is done',
+      'Building your home is personal, and so is our approach. We lay the groundwork for lasting relationships, ensuring your satisfaction stands tall for decades.',
   },
 ];
 
@@ -72,21 +72,11 @@ const styles = {
   grid: {
     width: ['100%', '80%', '100%'],
     mx: 'auto',
-    gridGap: [
-      '35px 0',
-      null,
-      '40px 40px',
-      '50px 60px',
-      '30px',
-      '50px 40px',
-      '55px 90px',
-    ],
+    gridGap: '20px',
     gridTemplateColumns: [
-      'repeat(1,1fr)',
+      'repeat(1, 1fr)', // One column for mobile
       null,
-      'repeat(2,1fr)',
-      null,
-      'repeat(4,1fr)',
+      'repeat(2, 1fr)', // Two columns for larger screens
     ],
   },
 };

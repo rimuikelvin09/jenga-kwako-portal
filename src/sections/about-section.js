@@ -31,7 +31,7 @@ const data = {
       altText: 'Quality Construction',
       title: 'Quality Construction Services',
       text:
-        'We have created your One-Stop Shop for All Construction Needs: Architectural Services, QS Services, and Full Construction from Foundation to Finishing! We also help you get the necessary Government approvals & permits for construction',
+        'We have created your one-stop shop for all construction needs: architectural services, QS services, and full construction from foundation to finishing! We also help you get the necessary government approvals & permits for construction',
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ const data = {
       altText: 'Affordable Home Loans',
       title: 'Affordable Home Loans',
       text:
-        'The KMRC-backed mortgage offers the most affordable home loans at a fixed interest rate of 9.5% p.a on a reducing balance, with repayment period of up to 25 years. You can get upto 10.5 Million to build your own home',
+        'The KMRC-backed mortgage offers the most affordable home loans at a fixed interest rate of 9.5% p.a on a reducing balance, with repayment period of up to 25 years. You can get upto 10.5 million to build your own home',
     },
   ],
 };

@@ -12,6 +12,7 @@ const requirementsData = [
             'The title deed must be under the name of the person taking the loan.',
             'It should be free of encumbrances.',
             'It must be the land on which the client wants to build their house.',
+            'If you do not have land yet, there is a buy and build option under this product.',
         ],
     },
     {
@@ -75,7 +76,7 @@ export default function Requirements() {
                                     Amortization Table
                                 </a>
                             </li>
-                            <li>
+                            {/*<li>
                                 <a
                                     sx={styles.navLink}
                                     href="/downloadables/JK-terms.pdf"
@@ -94,7 +95,7 @@ export default function Requirements() {
                                     <FaFileDownload />.
                                     KMRC annual report 2023
                                 </a>
-                            </li>
+                            </li>*/}
                         </ul>
                     </Box>
                 </Grid>

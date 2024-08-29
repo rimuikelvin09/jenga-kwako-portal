@@ -25,8 +25,17 @@ const styles = {
     alignItems: ['center', 'flex-start'],
     flexDirection: 'column',
     mb: -1,
+    width: 'auto',
     textAlign: ['left', null, 'left'],
-    px: [4, null, 0],
+    px: [4, null, 5],
+    py: 4,
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    '&:hover': {
+      transform: 'scale(1.05)',
+      boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
+    },
   },
   img: {
     mx: ['auto', null, 0],

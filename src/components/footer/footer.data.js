@@ -46,18 +46,19 @@ export default {
         path: '/downloadables/JK-Requirements-Checklist.pdf',
         label: 'Requirements checklist'
       },
-      {
-        path: '/downloadables/KMRC-Annual-Report-2023.pdf',
-        label: 'KMRC Annual Reports'
-      },
+      /* {
+       path: '/downloadables/KMRC-Annual-Report-2023.pdf',
+       label: 'KMRC Annual Reports'
+     },
+     {
+       path: '/downloadables/JK-terms.pdf',
+       label: 'Jenga Kwako T&C\'s '
+     },*/
       {
         path: '/',
         label: 'Construction GPT (beta) '
       },
-      {
-        path: '/downloadables/JK-terms.pdf',
-        label: 'Jenga Kwako T&C\'s '
-      },
+
     ],
   },
   getInTouch: {

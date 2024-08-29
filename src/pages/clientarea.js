@@ -9,7 +9,7 @@ import { StickyProvider } from '../contexts/app/app.provider';
 import theme from '../theme';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-//import ClientSideMenu from '../components/clientsidemenu'; // Updated import
+
 
 import KeyFeature from '../sections/key-feature';
 import Calculator from '../sections/ammortization';
@@ -18,7 +18,7 @@ import RegisterButton from 'components/signupform/RegisterButton';
 
 import Clientbg from 'assets/clientbanner.png';
 
-const words = ['Quality', 'Affordable', 'Reliable'];
+const words = ['QUALITY', 'AFFORDABLE', 'RELIABLE'];
 
 const Typewriter = () => {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -73,15 +73,15 @@ export default function ClientAreaPage() {
                         <Container sx={styles.banner.container}>
                             <Box sx={styles.banner.contentBox}>
                                 <Heading as="h1" variant="heroPrimary" sx={styles.titleHeading}>
-                                    Our Promise Is
+                                    OUR PROMISE IS
                                     <Text sx={styles.redText}>
                                         💯 <Typewriter />
                                     </Text>
-                                    Construction Services
+                                    CONSTRUCTION SERVICES
                                 </Heading>
                                 <Text as="p" variant="heroSecondary" sx={styles.titleContent}>
-                                    We are dedicated to turning your home-ownership dreams into reality with our comprehensive A-Z building solutions.
-                                    Together with KMRC, who provide affordable home loans, we guide Kenyans from renting to building their dream homes.
+                                    Allow us to join the dots for you. We have an in-house team of
+                                    professionals that ensure your dream house becomes a reality from Financing, Architectural drawings up-to finishings
                                 </Text>
                             </Box>
                         </Container>
@@ -137,23 +137,23 @@ const styles = {
                 display: 'none',
             },
         },
-        '&::after': {
-            position: 'absolute',
-            content: '""',
-            top: 10,
-            bottom: 10,
-            left: 0,
-            right: 0,
-            height: '100%',
-            width: '100%',
-            zIndex: -1,
-            backgroundRepeat: `no-repeat`,
-            backgroundPosition: 'bottom left',
-            backgroundSize: '36%',
-            '@media screen and (max-width: 768px)': {
-                display: 'none',
-            },
-        },
+        /* '&::after': {
+             position: 'absolute',
+             content: '""',
+             top: 10,
+             bottom: 10,
+             left: 0,
+             right: 0,
+             height: '100%',
+             width: '100%',
+             zIndex: -1,
+             backgroundRepeat: `no-repeat`,
+             backgroundPosition: 'bottom left',
+             backgroundSize: '36%',
+             '@media screen and (max-width: 768px)': {
+                 display: 'none',
+             },
+         }, */
 
         container: {
             minHeight: 'inherit',

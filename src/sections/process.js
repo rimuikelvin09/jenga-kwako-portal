@@ -11,7 +11,7 @@ const data = [
     id: 1,
     title: 'Application & Appraisal',
     text:
-      'Fill out the form on this page, and we\'ll gather details to assess how much you qualify for. A bank representative will contact you to request necessary documents.',
+      'Register for the product by pressing the red register button below 👇, and we\'ll gather details to assess how much you qualify for. A bank representative will contact you to request necessary documents.',
   },
   {
     id: 2,

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Box } from 'theme-ui';
+import { jsx, Container, Box, Button } from 'theme-ui';
 import TextFeature from 'components/text-feature';
 import Image from 'components/image';
 
@@ -24,10 +24,10 @@ export default function CoreFeature() {
             subTitle={data.subTitle}
             title={data.title}
             description={data.description}
-            btnName={data.btnName}
-            btnURL={data.btnURL}
           />
+          <Button as='a' href={data.btnURL} target="_blank">{data.btnName}</Button>
         </Box>
+
         <Box sx={styles.thumbnail}>
           <Image src={FeatureThumb} alt="Thumbnail" />
           <Box sx={styles.shapeBox}>
@@ -35,6 +35,7 @@ export default function CoreFeature() {
           </Box>
         </Box>
       </Container>
+
     </section>
   );
 }
