@@ -84,7 +84,7 @@ const cardData = [
             'floor area 160sqm',
         ],
         price: 'Ksh 6,700,000',
-        link: 'https://bbsltd.co.ke/sample-plans/design-f/',
+        link: 'https://bbsltd.co.ke/sample-plans/design-e/',
     },
     {
         id: 3,
@@ -101,7 +101,7 @@ const cardData = [
             'floor area 160sqm',
         ],
         price: 'Ksh 6,800,000',
-        link: 'https://bbsltd.co.ke/sample-plans/design-e/',
+        link: 'https://bbsltd.co.ke/sample-plans/design-f/',
     },
 ];
 
