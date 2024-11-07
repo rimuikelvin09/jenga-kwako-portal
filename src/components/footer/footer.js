@@ -20,19 +20,19 @@ export default function Footer() {
       <Box sx={styles.footer.partners}>
         <Grid sx={styles.footer.logos}>
           <Link href="https://bbsltd.co.ke/">
-            <Image src={Bbslogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+            <Image src={Bbslogo} style={{ width: '100px', height: 'auto' }} alt="Logo" />
           </Link>
           <Link href="https://www.kmrc.co.ke/">
-            <Image src={KMRClogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+            <Image src={KMRClogo} style={{ width: '100px', height: 'auto' }} alt="Logo" />
           </Link>
           <Link href="https://www.cmax.co.ke/cmax-technology/">
-            <Image src={Cmaxlogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+            <Image src={Cmaxlogo} style={{ width: '100px', height: 'auto' }} alt="Logo" />
           </Link>
           <Link href="https://www.stanbicbank.co.ke/kenya/personal/products-and-services/borrow-for-your-needs/see-all-home-loans/affordable-housing">
-            <Image src={Stanbiclogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+            <Image src={Stanbiclogo} style={{ width: '100px', height: 'auto' }} alt="Logo" />
           </Link>
           <Link href="https://alphainsights.co.ke/">
-            <Image src={Atlogo} style={{ width: '70px', height: 'auto' }} alt="Logo" />
+            <Image src={Atlogo} style={{ width: '100px', height: 'auto' }} alt="Logo" />
           </Link>
         </Grid>
       </Box>
